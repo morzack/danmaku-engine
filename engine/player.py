@@ -45,14 +45,15 @@ class Player:
         b = []
 
         if self.last_shot+self.frames_between_shots < current_time:
-            b.append(Bullet("playerbullet", [self.x+self.player_config["width"]/2, self.y], 180))
+            b.append(Bullet("playerbullet", [self.x+self.player_config["width"]/2-self.player_config["barreloffset"], self.y], 180))
+            b.append(Bullet("playerbullet", [self.x+self.player_config["width"]/2+self.player_config["barreloffset"], self.y], 180))
             self.last_shot = current_time
 
         return b
 
     def get_center(self):
-        center_x = self.x+self.player_image.get_width()/2
-        center_y = self.y+self.player_image.get_height()/2
+        center_x = self.x+self.player_config["width"]/2
+        center_y = self.y+self.player_config["height"]/2
             
         return [center_x, center_y]
 

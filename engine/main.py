@@ -33,6 +33,8 @@ def main():
         
         l0.update(screen, get_input(), frameCounter)
 
+        # print(frameCounter)
+
         pygame.event.pump()
         pygame.display.flip()
 

@@ -1,19 +1,170 @@
 {
     "enemies" : [
         {
-            "id" : "testenemy1",
-            "type" : "testenemy",
-            "entrytime" : 0,
-            "exittime" : 20000,
-            "path" : "testpath"
+            "id" : "1",
+            "type" : "testhoming",
+            "entrytime" : 100,
+            "exittime" : 800,
+            "path" : "topu"
+        },
+        {
+            "id" : "2",
+            "type" : "testcircle",
+            "entrytime" : 130,
+            "exittime" : 800,
+            "path" : "topu"
+        },
+        {
+            "id" : "3",
+            "type" : "testhoming",
+            "entrytime" : 160,
+            "exittime" : 800,
+            "path" : "topu"
+        },
+        {
+            "id" : "4",
+            "type" : "testhoming",
+            "entrytime" : 190,
+            "exittime" : 800,
+            "path" : "toptsu"
+        },
+        {
+            "id" : "5",
+            "type" : "testcircle",
+            "entrytime" : 220,
+            "exittime" : 800,
+            "path" : "toptsu"
+        },
+        {
+            "id" : "6",
+            "type" : "testhoming",
+            "entrytime" : 250,
+            "exittime" : 800,
+            "path" : "toptsu"
+        },
+        {
+            "id" : "7",
+            "type" : "testcircle",
+            "entrytime" : 280,
+            "exittime" : 800,
+            "path" : "toptsu"
+        },
+        {
+            "id" : "8",
+            "type" : "testhoming",
+            "entrytime" : 310,
+            "exittime" : 800,
+            "path" : "toptsu"
+        },
+        {
+            "id" : "9",
+            "type" : "testhoming",
+            "entrytime" : 800,
+            "exittime" : 1600,
+            "path" : "L"
+        },
+        {
+            "id" : "10",
+            "type" : "testhoming",
+            "entrytime" : 820,
+            "exittime" : 1600,
+            "path" : "L"
+        },
+        {
+            "id" : "11",
+            "type" : "testhoming",
+            "entrytime" : 840,
+            "exittime" : 1600,
+            "path" : "L"
+        },
+        {
+            "id" : "12",
+            "type" : "testcircle",
+            "entrytime" : 860,
+            "exittime" : 1600,
+            "path" : "L"
+        },
+        {
+            "id" : "13",
+            "type" : "testhoming",
+            "entrytime" : 900,
+            "exittime" : 1600,
+            "path" : "J"
+        },
+        {
+            "id" : "14",
+            "type" : "testhoming",
+            "entrytime" : 920,
+            "exittime" : 1600,
+            "path" : "J"
+        },
+        {
+            "id" : "15",
+            "type" : "testhoming",
+            "entrytime" : 940,
+            "exittime" : 1600,
+            "path" : "J"
+        },
+        {
+            "id" : "16",
+            "type" : "testcircle",
+            "entrytime" : 960,
+            "exittime" : 1600,
+            "path" : "J"
+        },
+        {
+            "id" : "17",
+            "type" : "hypertesthoming",
+            "entrytime" : 1400,
+            "exittime" : 2000,
+            "path" : "J"
+        },
+        {
+            "id" : "18",
+            "type" : "testcircle",
+            "entrytime" : 1460,
+            "exittime" : 2000,
+            "path" : "J"
+        },
+        {
+            "id" : "19",
+            "type" : "hypertesthoming",
+            "entrytime" : 1400,
+            "exittime" : 2000,
+            "path" : "L"
+        },
+        {
+            "id" : "20",
+            "type" : "testcircle",
+            "entrytime" : 1460,
+            "exittime" : 2000,
+            "path" : "L"
         }
     ],
     "paths" : [
         {
-            "id" : "testpath",
-            "points" : [[0, 0], [100, 40], [200, 160],[300,320]],
-            "maxspeed" : 2,
+            "id" : "topu",
+            "points" : [[-30,-30],[0,0],[80,156],[142,242],[193,261],[291,260],[324,242],[395,116],[525,-60]],
+            "maxspeed" : 3,
             "rotatewith" : true
+        },
+        {
+            "id" : "toptsu",
+            "points" : [[-30,-30],[0,0],[80,156],[142,242],[193,261],[291,260],[324,242],[400,110],[395,70],[384,33],[356,12],[244,14],[170,54],[90,117],[-80,287]],
+            "maxspeed" : 3,
+            "rotatewith" : true
+        },
+        {
+            "id" : "L",
+            "points" : [[90,-67],[88,3],[102,279],[111,319],[127,349],[226,379],[235,384],[579,387]],
+            "maxspeed" : 3,
+            "rotatewith" : true
+        },
+        {
+            "id" : "J",
+            "points" : [[445,-69],[441,0],[432,226],[400,265],[357,291],[271,316],[126,327],[-4,328],[-132,329]],
+            "maxspeed" : 3,
+            "rotatewith":true
         }
     ]
 }

@@ -1,0 +1,14 @@
+{
+    "width" : 40,
+    "height" : 40,
+
+    "shootrate" : 50,
+
+    "hitbox" : 17,
+
+    "health" : 15,
+
+    "bullettype" : "basicnondirectional",
+    "shootingpattern" : "circle",
+    "bullets": 20
+}

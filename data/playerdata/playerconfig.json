@@ -7,5 +7,6 @@
     "speed" : 4,
     "slowedmodifier" : 0.5,
 
-    "shootrate" : 3
+    "shootrate" : 3,
+    "barreloffset" : 10
 }

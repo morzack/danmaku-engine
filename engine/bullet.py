@@ -6,6 +6,7 @@ import math
 from .utils import check_bounds, calculate_angle
 
 class Bullet:
+    BULLETSCALECOEF = 1.25 # extend image outside hitbox
     def __init__(self, name, position, rotation, target=[0,0]):
         with open(f"data/configuration.json", 'r') as f:
             self.game_config = json.load(f)
@@ -18,15 +19,23 @@ class Bullet:
         
         self.x = position[0]
         self.y = position[1]
-        self.rotation = rotation
+        self.rotation = 0
 
         if config["locking"]:
             # set rotation to position
             self.rotation = -math.degrees(calculate_angle(target, [self.x, self.y]))-90
+        
+        self.rotation += rotation
 
         self.image = pygame.image.load(config["image_location"])
-        self.image = pygame.transform.rotate(self.image, rotation-180)
-        self.image = pygame.transform.scale(self.image, (self.radius*2, self.radius*2))
+        self.image = pygame.transform.scale(self.image, (int(self.radius*2*Bullet.BULLETSCALECOEF), int(self.radius*2*Bullet.BULLETSCALECOEF)))
+        self.image = pygame.transform.rotate(self.image, self.rotation-180)
+
+        self.last_dx = 0
+        self.last_dy = 0
+
+    def get_center(self):
+        return [self.x-self.last_dx, self.y+self.radius-self.last_dy] # why x no use radius?
 
     def check_bounds(self):
         """
@@ -41,5 +50,8 @@ class Bullet:
 
         self.x += d_x
         self.y += d_y
+
+        self.last_dx = d_x
+        self.last_dy = d_y
 
         surface.blit(self.image, (int(self.x)-self.image.get_width()/2, int(self.y)))

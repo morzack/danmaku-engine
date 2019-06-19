@@ -57,6 +57,10 @@ class Level(State):
         
         for bullet in self.player.bullets:
             for enemy in self.enemies:
-                if raduis_collision([bullet.x, bullet.y], bullet.radius, enemy.get_center(), enemy.hitbox):
+                if enemy.active and enemy.alive and raduis_collision([bullet.x, bullet.y], bullet.radius, enemy.get_center(), enemy.hitbox):
                     enemy.kill()
-                    self.player.bullets.remove(bullet)
+                    try:
+                        self.player.bullets.remove(bullet)
+                    except:
+                        # ¯\_(ツ)_/¯
+                        pass

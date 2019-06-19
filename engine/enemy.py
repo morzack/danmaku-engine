@@ -52,6 +52,10 @@ class Enemy:
         self.last_shot = 0
 
         self.health = self.enemy_data["health"]
+
+        self.shootingpattern = self.enemy_data["shootingpattern"]
+        self.bullet_count = self.enemy_data["bullets"]
+        self.bullet_type = self.enemy_data["bullettype"]
     
     def get_center(self):
         center_x = self.x+self.image.get_width()/2
@@ -69,14 +73,38 @@ class Enemy:
         b = []
 
         player_center = player.get_center()
+        center = self.get_center()
 
         if self.last_shot+self.frames_between_shots < current_time:
-            b.append(Bullet("testenemybullet", [self.x+self.enemy_data["width"]/2, self.y+self.enemy_data["height"]], 0, player_center))
+            shooting_position = center
+            if self.shootingpattern == "line":
+                for i in range(self.bullet_count):
+                    x = Bullet(self.bullet_type, shooting_position, 0, player_center)
+                    b.append(x)
+                    shooting_position[1] -= x.radius*3
+            if self.shootingpattern == "circle":
+                for i in range(self.bullet_count):
+                    b.append(Bullet(self.bullet_type, shooting_position, i*(360/self.bullet_count), player_center))
+            if self.shootingpattern == "wall":
+                b.append(Bullet(self.bullet_type, shooting_position, 0, player_center))
+                spread = 10 # degrees per bullet
+                for i in range(self.bullet_count):
+                    b.append(Bullet(self.bullet_type, shooting_position, i*spread, player_center))
+                    b.append(Bullet(self.bullet_type, shooting_position, i*-spread, player_center))
             self.last_shot = current_time
 
         return b
 
     def update(self, surface : pygame.Surface, current_time, player):
+        for bullet in self.bullets:
+            if not bullet.check_bounds():
+                self.bullets.remove(bullet)
+            else:
+                bullet.update(surface)
+                if raduis_collision(bullet.get_center(), bullet.radius, player.get_center(), player.hitbox_size):
+                    player.kill()
+                    self.bullets.remove(bullet)
+
         if self.health <= 0:
             self.alive = False
         if current_time > self.enemy_level_data["entrytime"]:
@@ -102,16 +130,10 @@ class Enemy:
             if self.rotate_path:
                 image_rot = 90-math.degrees(angle_to_next_point)
                 image_rot -= self.rotation
+                if image_rot < -180:
+                    image_rot += 360
                 self.rotation += image_rot/Enemy.ROTATIONSPEED
 
         self.bullets.extend(self.shoot(current_time, player))
-        for bullet in self.bullets:
-            if not bullet.check_bounds():
-                self.bullets.remove(bullet)
-            else:
-                bullet.update(surface)
-                if raduis_collision([bullet.x, bullet.y], bullet.radius, player.get_center(), player.hitbox_size):
-                    player.kill()
-                    self.bullets.remove(bullet)
 
         surface.blit(rotated_image, [int(self.x), int(self.y)])
