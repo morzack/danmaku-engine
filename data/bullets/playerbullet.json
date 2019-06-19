@@ -1,0 +1,6 @@
+{
+    "speed" : 10,
+    "radius" : 8,
+    "image_location" : "data/bullets/playerbullet.png",
+    "locking" : false
+}

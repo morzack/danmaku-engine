@@ -1,0 +1,19 @@
+{
+    "enemies" : [
+        {
+            "id" : "testenemy1",
+            "type" : "testenemy",
+            "entrytime" : 0,
+            "exittime" : 20000,
+            "path" : "testpath"
+        }
+    ],
+    "paths" : [
+        {
+            "id" : "testpath",
+            "points" : [[0, 0], [100, 40], [200, 160],[300,320]],
+            "maxspeed" : 2,
+            "rotatewith" : true
+        }
+    ]
+}
