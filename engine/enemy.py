@@ -14,12 +14,15 @@ class Enemy:
         with open(f"data/levels/{level}/enemies.json", 'r') as f:
             leveldata = json.load(f)
 
+        with open(f"data/paths.json", 'r') as f:
+            paths = json.load(f)["paths"]
+
         for enemy in leveldata["enemies"]:
             if enemy["id"] == enemyID:
                 self.enemy_level_data = enemy
                 break
         
-        for path in leveldata["paths"]:
+        for path in paths:
             if path["id"] == self.enemy_level_data["path"]:
                 self.max_speed = path["maxspeed"]
                 self.path = path["points"]
@@ -29,13 +32,13 @@ class Enemy:
         self.type = self.enemy_level_data["type"]
 
         # load the enemy config for _this_ enemy
-        with open(f"data/enemies/{self.type}/config.json", 'r') as f:
-            self.enemy_data = json.load(f)
+        with open(f"data/enemies/enemies.json", 'r') as f:
+            self.enemy_data = json.load(f)[self.type]
 
         self.active = False
         self.alive = True
 
-        self.image = pygame.image.load(f"data/enemies/{self.type}/image.png")
+        self.image = pygame.image.load(f"data/enemies/images/{self.enemy_data['image']}.png")
         self.image = pygame.transform.scale(self.image, [self.enemy_data["width"], self.enemy_data["height"]])
 
         self.x = float(self.path[0][0])
@@ -89,8 +92,8 @@ class Enemy:
                 b.append(Bullet(self.bullet_type, shooting_position, 0, player_center))
                 spread = 10 # degrees per bullet
                 for i in range(self.bullet_count):
-                    b.append(Bullet(self.bullet_type, shooting_position, i*spread, player_center))
-                    b.append(Bullet(self.bullet_type, shooting_position, i*-spread, player_center))
+                    b.append(Bullet(self.bullet_type, shooting_position, (i+1)*spread, player_center))
+                    b.append(Bullet(self.bullet_type, shooting_position, (i+1)*-spread, player_center))
             self.last_shot = current_time
 
         return b

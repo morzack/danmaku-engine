@@ -1,0 +1,66 @@
+{
+    "hypertesthoming" : {
+        "width" : 40,
+        "height" : 40,
+    
+        "shootrate" : 30,
+    
+        "hitbox" : 15,
+    
+        "health" : 10,
+    
+        "bullettype" : "hyperhoming",
+        "shootingpattern" : "wall",
+        "bullets": 3,
+
+        "image" : "b1"
+    },
+    "testcircle" : {
+        "width" : 40,
+        "height" : 40,
+    
+        "shootrate" : 50,
+    
+        "hitbox" : 17,
+    
+        "health" : 15,
+    
+        "bullettype" : "basicnondirectional",
+        "shootingpattern" : "circle",
+        "bullets": 10,
+
+        "image" : "b2"
+    },
+    "testhoming" : {
+        "width" : 40,
+        "height" : 40,
+    
+        "shootrate" : 40,
+    
+        "hitbox" : 15,
+    
+        "health" : 10,
+    
+        "bullettype" : "basichoming",
+        "shootingpattern" : "line",
+        "bullets": 3,
+
+        "image" : "g1"
+    },
+    "testhomingwall" : {
+        "width" : 40,
+        "height" : 40,
+    
+        "shootrate" : 40,
+    
+        "hitbox" : 15,
+    
+        "health" : 10,
+    
+        "bullettype" : "hyperhoming",
+        "shootingpattern" : "wall",
+        "bullets": 2,
+
+        "image" : "g2"
+    }
+}

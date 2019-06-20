@@ -1,6 +1,0 @@
-{
-    "speed" : 2.5,
-    "radius" : 8,
-    "image_location" : "data/bullets/greenblob.png",
-    "locking" : true
-}

@@ -1,7 +1,0 @@
-{
-    "speed" : 2,
-    "radius" : 15,
-    "image_location" : "data/bullets/redcircle.png",
-    "locking" : false,
-    "imagespinrate" : 0
-}

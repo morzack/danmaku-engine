@@ -11,8 +11,8 @@ class Bullet:
         with open(f"data/configuration.json", 'r') as f:
             self.game_config = json.load(f)
 
-        with open(f"data/bullets/{name}.json", 'r') as f:
-            config = json.load(f)
+        with open(f"data/bullets/bullets.json", 'r') as f:
+            config = json.load(f)[name]
 
         self.radius = config["radius"]
         self.speed = config["speed"]
@@ -31,7 +31,7 @@ class Bullet:
 
         self.image_rotation = self.rotation-180
 
-        self.image = pygame.image.load(config["image_location"])
+        self.image = pygame.image.load(f"data/bullets/images/{config['image_location']}.png")
         self.image = pygame.transform.scale(self.image, (int(self.radius*2*Bullet.BULLETSCALECOEF), int(self.radius*2*Bullet.BULLETSCALECOEF)))
         self.image = pygame.transform.rotate(self.image, self.image_rotation)
 
