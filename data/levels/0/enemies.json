@@ -2,7 +2,7 @@
     "enemies" : [
         {
             "id" : "1",
-            "type" : "testhoming",
+            "type" : "testhomingwall",
             "entrytime" : 100,
             "exittime" : 800,
             "path" : "topu"
@@ -37,7 +37,7 @@
         },
         {
             "id" : "6",
-            "type" : "testhoming",
+            "type" : "testhomingwall",
             "entrytime" : 250,
             "exittime" : 800,
             "path" : "toptsu"
@@ -65,14 +65,14 @@
         },
         {
             "id" : "10",
-            "type" : "testhoming",
+            "type" : "testhomingwall",
             "entrytime" : 820,
             "exittime" : 1600,
             "path" : "L"
         },
         {
             "id" : "11",
-            "type" : "testhoming",
+            "type" : "testhomingwall",
             "entrytime" : 840,
             "exittime" : 1600,
             "path" : "L"
@@ -93,14 +93,14 @@
         },
         {
             "id" : "14",
-            "type" : "testhoming",
+            "type" : "testhomingwall",
             "entrytime" : 920,
             "exittime" : 1600,
             "path" : "J"
         },
         {
             "id" : "15",
-            "type" : "testhoming",
+            "type" : "testhomingwall",
             "entrytime" : 940,
             "exittime" : 1600,
             "path" : "J"

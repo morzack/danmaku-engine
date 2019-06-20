@@ -16,10 +16,12 @@ class Bullet:
 
         self.radius = config["radius"]
         self.speed = config["speed"]
-        
+
         self.x = position[0]
         self.y = position[1]
         self.rotation = 0
+
+        self.image_spin_rate = 0 if "imagespinrate" not in config else config["imagespinrate"]
 
         if config["locking"]:
             # set rotation to position
@@ -27,9 +29,11 @@ class Bullet:
         
         self.rotation += rotation
 
+        self.image_rotation = self.rotation-180
+
         self.image = pygame.image.load(config["image_location"])
         self.image = pygame.transform.scale(self.image, (int(self.radius*2*Bullet.BULLETSCALECOEF), int(self.radius*2*Bullet.BULLETSCALECOEF)))
-        self.image = pygame.transform.rotate(self.image, self.rotation-180)
+        self.image = pygame.transform.rotate(self.image, self.image_rotation)
 
         self.last_dx = 0
         self.last_dy = 0
@@ -54,4 +58,10 @@ class Bullet:
         self.last_dx = d_x
         self.last_dy = d_y
 
-        surface.blit(self.image, (int(self.x)-self.image.get_width()/2, int(self.y)))
+        rendering = self.image
+
+        if self.image_spin_rate != 0:
+            rendering = pygame.transform.rotate(self.image, self.image_rotation)
+            self.image_rotation += self.image_spin_rate
+
+        surface.blit(rendering, (int(self.x)-self.image.get_width()/2, int(self.y)))

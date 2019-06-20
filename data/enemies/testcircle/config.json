@@ -10,5 +10,5 @@
 
     "bullettype" : "basicnondirectional",
     "shootingpattern" : "circle",
-    "bullets": 20
+    "bullets": 10
 }
