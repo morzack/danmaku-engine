@@ -10,7 +10,7 @@
         "health" : 10,
     
         "bullettype" : "hyperhoming",
-        "shootingpattern" : "wall",
+        "shootingpattern" : "line",
         "bullets": 3,
 
         "image" : "b1"
@@ -19,7 +19,7 @@
         "width" : 40,
         "height" : 40,
     
-        "shootrate" : 50,
+        "shootrate" : 80,
     
         "hitbox" : 17,
     
@@ -39,7 +39,7 @@
     
         "hitbox" : 15,
     
-        "health" : 10,
+        "health" : 5,
     
         "bullettype" : "basichoming",
         "shootingpattern" : "line",
@@ -51,7 +51,7 @@
         "width" : 40,
         "height" : 40,
     
-        "shootrate" : 40,
+        "shootrate" : 70,
     
         "hitbox" : 15,
     

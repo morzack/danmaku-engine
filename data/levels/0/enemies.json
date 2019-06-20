@@ -139,6 +139,193 @@
             "entrytime" : 1460,
             "exittime" : 2000,
             "path" : "L"
+        },
+        {
+            "id" : "21",
+            "type" : "hypertesthoming",
+            "entrytime" : 1810,
+            "exittime" : 2400,
+            "path" : "loop"
+        },
+        {
+            "id" : "22",
+            "type" : "testhoming",
+            "entrytime" : 1820,
+            "shootstart" : 1870,
+            "exittime" : 2400,
+            "path" : "loop"
+        },
+        {
+            "id" : "23",
+            "type" : "testhoming",
+            "entrytime" : 1830,
+            "shootstart" : 1870,
+            "exittime" : 2400,
+            "path" : "loop"
+        },
+        {
+            "id" : "24",
+            "type" : "testhoming",
+            "entrytime" : 1840,
+            "shootstart" : 1870,
+            "exittime" : 2400,
+            "path" : "loop"
+        },
+        {
+            "id" : "25",
+            "type" : "testhoming",
+            "entrytime" : 1850,
+            "shootstart" : 1870,
+            "exittime" : 2400,
+            "path" : "loop"
+        },
+        {
+            "id" : "26",
+            "type" : "testhoming",
+            "entrytime" : 1860,
+            "shootstart" : 1870,
+            "exittime" : 2400,
+            "path" : "loop"
+        },
+        {
+            "id" : "27",
+            "type" : "testhoming",
+            "entrytime" : 1870,
+            "shootstart" : 1870,
+            "exittime" : 2400,
+            "path" : "loop"
+        },
+        {
+            "id" : "28",
+            "type" : "testcircle",
+            "entrytime" : 1880,
+            "exittime" : 2400,
+            "path" : "loop"
+        },
+        {
+            "id" : "37",
+            "type" : "testhoming",
+            "entrytime" : 1950,
+            "exittime" : 2400,
+            "path" : "leftbottomup"
+        },
+        {
+            "id" : "29",
+            "type" : "testhomingwall",
+            "entrytime" : 2010,
+            "exittime" : 2400,
+            "path" : "leftbottomup"
+        },
+        {
+            "id" : "30",
+            "type" : "testhoming",
+            "entrytime" : 2020,
+            "exittime" : 2400,
+            "path" : "leftbottomup"
+        },
+        {
+            "id" : "31",
+            "type" : "testhoming",
+            "entrytime" : 2030,
+            "exittime" : 2400,
+            "path" : "leftbottomup"
+        },
+        {
+            "id" : "32",
+            "type" : "testhoming",
+            "entrytime" : 2040,
+            "exittime" : 2400,
+            "path" : "leftbottomup"
+        },
+        {
+            "id" : "33",
+            "type" : "testhoming",
+            "entrytime" : 2050,
+            "exittime" : 2400,
+            "path" : "leftbottomup"
+        },
+        {
+            "id" : "34",
+            "type" : "testhoming",
+            "entrytime" : 2060,
+            "exittime" : 2400,
+            "path" : "leftbottomup"
+        },
+        {
+            "id" : "35",
+            "type" : "testhoming",
+            "entrytime" : 2070,
+            "exittime" : 2400,
+            "path" : "leftbottomup"
+        },
+        {
+            "id" : "36",
+            "type" : "testcircle",
+            "entrytime" : 2080,
+            "exittime" : 2400,
+            "path" : "leftbottomup"
+        },
+        {
+            "id" : "38",
+            "type" : "testhomingwall",
+            "entrytime" : 2110,
+            "exittime" : 3000,
+            "path" : "oof de loop"
+        },
+        {
+            "id" : "39",
+            "type" : "testhoming",
+            "entrytime" : 2120,
+            "shootstart" : 2170,
+            "exittime" : 3000,
+            "path" : "oof de loop"
+        },
+        {
+            "id" : "40",
+            "type" : "testhoming",
+            "entrytime" : 2130,
+            "shootstart" : 2170,
+            "exittime" : 3000,
+            "path" : "oof de loop"
+        },
+        {
+            "id" : "41",
+            "type" : "testhoming",
+            "entrytime" : 2140,
+            "shootstart" : 2170,
+            "exittime" : 3000,
+            "path" : "oof de loop"
+        },
+        {
+            "id" : "42",
+            "type" : "testhoming",
+            "entrytime" : 2150,
+            "shootstart" : 2170,
+            "exittime" : 3000,
+            "path" : "oof de loop"
+        },
+        {
+            "id" : "43",
+            "type" : "testhoming",
+            "entrytime" : 2160,
+            "shootstart" : 2170,
+            "exittime" : 3000,
+            "path" : "oof de loop"
+        },
+        {
+            "id" : "44",
+            "type" : "testhoming",
+            "entrytime" : 2170,
+            "shootstart" : 2170,
+            "exittime" : 3000,
+            "path" : "oof de loop"
+        },
+        {
+            "id" : "45",
+            "type" : "testcircle",
+            "entrytime" : 2180,
+            "exittime" : 3000,
+            "path" : "oof de loop"
         }
     ]
 }

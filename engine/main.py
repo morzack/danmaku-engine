@@ -27,10 +27,14 @@ def main():
 
     running = True
     while running:
+        actualfps = config_data["framerate"]
+
         keys = get_input()
         if keys["quit"]:
             running = False
-        
+        if keys["fpsup"]:
+            actualfps *= 2
+
         l0.update(screen, get_input(), frameCounter)
 
         # print(frameCounter)
@@ -38,5 +42,5 @@ def main():
         pygame.event.pump()
         pygame.display.flip()
 
-        clock.tick(config_data["framerate"])
+        clock.tick(actualfps)
         frameCounter += 1

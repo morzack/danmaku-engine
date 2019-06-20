@@ -52,7 +52,7 @@ class Enemy:
 
         self.hitbox = self.enemy_data["hitbox"]
         self.frames_between_shots = self.enemy_data["shootrate"]
-        self.last_shot = 0
+        self.last_shot = 0 if not "shootstart" in self.enemy_level_data else self.enemy_level_data["shootstart"]
 
         self.health = self.enemy_data["health"]
 

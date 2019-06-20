@@ -1,13 +1,13 @@
 {
     "basichoming" : {
-        "speed" : 2.5,
-        "radius" : 8,
+        "speed" : 2,
+        "radius" : 5,
         "image_location" : "greenblob",
         "locking" : true
     },
     "basicnondirectional" : {
-        "speed" : 2,
-        "radius" : 15,
+        "speed" : 1.5,
+        "radius" : 10,
         "image_location" : "redcircle",
         "locking" : false,
         "imagespinrate" : 0
@@ -16,7 +16,7 @@
         "speed" : 4,
         "radius" : 5,
         "image_location" : "greenblob",
-        "locking" : false
+        "locking" : true
     },
     "playerbullet" : {
         "speed" : 20,
