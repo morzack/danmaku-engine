@@ -9,52 +9,63 @@ class Player:
     the player. pretty self explanatory i hope
     """
 
-    def __init__(self):
-        data_dir = f"data"
-        player_data_dir = f"{data_dir}/playerdata"
-
-        with open(f"{data_dir}/configuration.json", 'r') as f:
-            self.config_data = json.load(f)
+    def __init__(self, config_data):
+        """
+        config_data should be the json data config for the _game_ preloaded into a dict
+        """
+        player_data_dir = "data/playerdata"
+        
+        self.screen_w, self.screen_h = config_data["width"], config_data["height"]
 
         with open(f"{player_data_dir}/playerconfig.json") as f:
-            self.player_config = json.load(f)
+            # NOTE all of the important things here are loaded into variables because that's faster than a dict
+            player_config = json.load(f)
+            self.height, self.width = player_config["height"], player_config["width"]
+            self.barreloffset = player_config["barreloffset"]
+            self.hitbox_size = player_config["hitbox"]
+            self.frames_between_shots = player_config["shootrate"]
+            self.slowed_modifier = player_config["slowedmodifier"]
+            self.speed = player_config["speed"]
 
-        self.player_image = pygame.image.load(f"{player_data_dir}/player.png")
-        self.player_image = pygame.transform.scale(self.player_image, (self.player_config["width"], self.player_config["height"]))
+        # configure images to render
+        # TODO player animations
+        self.player_image = pygame.image.load(f"{player_data_dir}/player.png").convert_alpha()
+        self.player_image = pygame.transform.scale(self.player_image, (self.width, self.height))
 
-        self.hitbox_image = pygame.image.load(f"{player_data_dir}/playerhitbox.png")
-        self.hitbox_image = pygame.transform.scale(self.hitbox_image, (self.player_config["hitbox"]*2, self.player_config["hitbox"]*2))
+        self.hitbox_image = pygame.image.load(f"{player_data_dir}/playerhitbox.png").convert_alpha()
+        self.hitbox_image = pygame.transform.scale(self.hitbox_image, (self.hitbox_size*2, self.hitbox_size*2))
 
-        # start the player 80% down in the center of the screen
-        self.x = self.config_data["width"]/2 - self.player_config["width"]/2
-        self.y = self.config_data["height"]*.7
+        # start the player down in the center of the screen
+        self.x = self.screen_w/2 - self.width/2
+        self.y = self.screen_h*.7
 
-        self.hitbox_size = self.player_config["hitbox"]
-
+        # bullets that the player will keep track of
         self.bullets = []
 
-        self.last_shot = -self.player_config["shootrate"]
-        self.frames_between_shots = self.player_config["shootrate"]
+        # used to regulate fire
+        self.last_shot = -self.frames_between_shots
 
+        # updated by outside forces if the player is hit
         self.hit_last_frame = False
 
     def shoot(self, current_time):
         """
-        return all the bullets that the player can shoot at a given time
+        return all the bullets (in a list) that the player _can_ shoot at a given time
         """
         b = []
-
         if self.last_shot+self.frames_between_shots < current_time:
-            b.append(Bullet("playerbullet", [self.x+self.player_config["width"]/2-self.player_config["barreloffset"], self.y], 180))
-            b.append(Bullet("playerbullet", [self.x+self.player_config["width"]/2+self.player_config["barreloffset"], self.y], 180))
+            # TODO change this based on player shot type configuration and power
+            b.append(Bullet("playerbullet", [self.x+self.width/2-self.barreloffset, self.y], 180))
+            b.append(Bullet("playerbullet", [self.x+self.width/2+self.barreloffset, self.y], 180))
             self.last_shot = current_time
-
         return b
 
     def get_center(self):
-        center_x = self.x+self.player_config["width"]/2
-        center_y = self.y+self.player_config["height"]/2
-            
+        """
+        get the center of the player's sprite, which is also the center of the hitbox
+        """
+        center_x = self.x+self.width/2
+        center_y = self.y+self.height/2
         return [center_x, center_y]
 
     def kill(self):
@@ -64,27 +75,34 @@ class Player:
         self.hit_last_frame = True
 
     def update(self, surface : pygame.Surface, keys, current_time):
+        """
+        update the player object
+        surface is the surface to render onto
+        keys are the keys currently pressed, as declared in userinterface
+        current_time is the current frame
+        """
         # handle killing the player
+        # TODO actually kill the player
         if self.hit_last_frame:
-            print("oof, you got hit")
+            print("oof, you got hit") # this shouldn't exist for too long...
             self.hit_last_frame = False
 
         # handle slowing if the player makes it slower
-        speed_modifier = self.player_config["slowedmodifier"] if keys["slowed"] else 1
+        speed_modifier = self.slowed_modifier if keys["slowed"] else 1
         if keys["left"]:
-            self.x -= self.player_config["speed"]*speed_modifier
+            self.x -= self.speed*speed_modifier
         if keys["right"]:
-            self.x += self.player_config["speed"]*speed_modifier
+            self.x += self.speed*speed_modifier
         if keys["up"]:
-            self.y -= self.player_config["speed"]*speed_modifier
+            self.y -= self.speed*speed_modifier
         if keys["down"]:
-            self.y += self.player_config["speed"]*speed_modifier
+            self.y += self.speed*speed_modifier
         if keys["shoot"]:
             self.bullets.extend(self.shoot(current_time))
 
         # clamp the player's position
-        self.x = clamp(self.x, 0, self.config_data["width"]-self.player_config["width"])
-        self.y = clamp(self.y, 0, self.config_data["height"]-self.player_config["height"])
+        self.x = clamp(self.x, 0, self.screen_w-self.width)
+        self.y = clamp(self.y, 0, self.screen_h-self.height)
 
         # update player bullets
         for bullet in self.bullets:

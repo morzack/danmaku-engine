@@ -7,23 +7,27 @@ from engine.userinterface import get_input
 from engine.level import Level
 
 def main():
-    print("entering main")
-    
+    print("starting game")
+
     pygame.init()
 
-    config_file = f"data/configuration.json"
+    config_file = "data/configuration.json"
 
     with open(config_file, 'r') as f:
         config_data = json.load(f)
+        screen_width, screen_height = config_data["width"], config_data["height"]
+        screen_caption = config_data["title"]
+        default_fps = config_data["framerate"]
+        debug_mode = config_data["debug"]
 
-    screen = pygame.display.set_mode((config_data["width"], config_data["height"]))
-    pygame.display.set_caption(config_data["title"])
+    screen = pygame.display.set_mode((screen_width, screen_height))
+    pygame.display.set_caption(screen_caption)
 
-    l0 = Level(0)
+    l0 = Level(0, config_data) # TODO proper level loading and menus
 
     clock = pygame.time.Clock()
 
-    frameCounter = 0
+    current_frame = 0
 
     running = True
     while running:
@@ -32,15 +36,13 @@ def main():
         keys = get_input()
         if keys["quit"]:
             running = False
-        if keys["fpsup"]:
-            actualfps *= 2
 
-        l0.update(screen, get_input(), frameCounter)
+        l0.update(screen, keys, current_frame)
 
-        # print(frameCounter)
+        # print(current_frame) # TODO make this render onscreen if there's a debug mode or something
 
-        pygame.event.pump()
+        pygame.event.pump() # TODO potentially have some kind of event hanlding for going through menus
         pygame.display.flip()
 
-        clock.tick(actualfps)
-        frameCounter += 1
+        clock.tick(default_fps*(2 if debug_mode and keys["fpsup"] else 1))
+        current_frame += 1

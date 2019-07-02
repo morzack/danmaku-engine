@@ -13,5 +13,6 @@ def get_input():
         "slowed" : keys[pygame.K_LSHIFT],
         "shoot" : keys[pygame.K_z],
         "bomb" : keys[pygame.K_x],
-        "fpsup" : keys[pygame.K_CAPSLOCK]
+        "fpsup" : keys[pygame.K_CAPSLOCK]+keys[pygame.K_TAB],
+        "debugpause" : keys[pygame.K_1]
     }

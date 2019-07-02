@@ -4,12 +4,13 @@ import math
 
 from .utils import clamp, calculate_angle, raduis_collision
 from .bullet import Bullet
+from .spritecache import CachedEnemy, CachedBullet, CachedPath, SpriteCache
 
 class Enemy:
     MOVEMENTERRORTOLERANCE = 2
     ROTATIONSPEED = 20
 
-    def __init__(self, enemyID, level):
+    def __init__(self, enemyID, level, spritecache : SpriteCache):
         # load the enemy data for this enemy from the level file
         with open(f"data/levels/{level}/enemies.json", 'r') as f:
             leveldata = json.load(f)
