@@ -11,36 +11,21 @@ class Enemy:
     ROTATIONSPEED = 20
 
     def __init__(self, enemyID, level, spritecache : SpriteCache):
-        # load the enemy data for this enemy from the level file
-        with open(f"data/levels/{level}/enemies.json", 'r') as f:
-            leveldata = json.load(f)
-
-        with open(f"data/paths.json", 'r') as f:
-            paths = json.load(f)["paths"]
-
-        for enemy in leveldata["enemies"]:
-            if enemy["id"] == enemyID:
-                self.enemy_level_data = enemy
-                break
-        
-        for path in paths:
-            if path["id"] == self.enemy_level_data["path"]:
-                self.max_speed = path["maxspeed"]
-                self.path = path["points"]
-                self.rotate_path = path["rotatewith"]
-                break
+        self.enemy_level_data = spritecache.enemy_data_by_id[enemyID]
+        self.path_object = spritecache.paths[self.enemy_level_data["path"]]
+        self.max_speed = self.path_object.max_speed
+        self.path = self.path_object.path
+        self.rotate_path = self.path_object.rotate_path
 
         self.type = self.enemy_level_data["type"]
 
-        # load the enemy config for _this_ enemy
-        with open(f"data/enemies/enemies.json", 'r') as f:
-            self.enemy_data = json.load(f)[self.type]
+        self.enemy_data = spritecache.enemy_sprites[self.type]
 
         self.active = False
         self.alive = True
 
-        self.image = pygame.image.load(f"data/enemies/images/{self.enemy_data['image']}.png")
-        self.image = pygame.transform.scale(self.image, [self.enemy_data["width"], self.enemy_data["height"]])
+        self.image = self.enemy_data.image
+        self.image = pygame.transform.scale(self.image, [self.enemy_data.data["width"], self.enemy_data.data["height"]])
 
         self.x = float(self.path[0][0])
         self.y = float(self.path[0][1])
@@ -51,15 +36,17 @@ class Enemy:
         
         self.bullets = []
 
-        self.hitbox = self.enemy_data["hitbox"]
-        self.frames_between_shots = self.enemy_data["shootrate"]
+        self.hitbox = self.enemy_data.data["hitbox"]
+        self.frames_between_shots = self.enemy_data.data["shootrate"]
         self.last_shot = 0 if not "shootstart" in self.enemy_level_data else self.enemy_level_data["shootstart"]
 
-        self.health = self.enemy_data["health"]
+        self.health = self.enemy_data.data["health"]
 
-        self.shootingpattern = self.enemy_data["shootingpattern"]
-        self.bullet_count = self.enemy_data["bullets"]
-        self.bullet_type = self.enemy_data["bullettype"]
+        self.shootingpattern = self.enemy_data.data["shootingpattern"]
+        self.bullet_count = self.enemy_data.data["bullets"]
+        self.bullet_type = self.enemy_data.data["bullettype"]
+
+        self.cached_bullet = spritecache.bullet_sprites[self.bullet_type]
     
     def get_center(self):
         center_x = self.x+self.image.get_width()/2
@@ -83,14 +70,14 @@ class Enemy:
             shooting_position = center
             if self.shootingpattern == "line":
                 for i in range(self.bullet_count):
-                    x = Bullet(self.bullet_type, shooting_position, 0, player_center)
+                    x = Bullet(self.bullet_type, shooting_position, 0, player_center, self.cached_bullet)
                     b.append(x)
                     shooting_position[1] -= x.radius*3
             if self.shootingpattern == "circle":
                 for i in range(self.bullet_count):
-                    b.append(Bullet(self.bullet_type, shooting_position, i*(360/self.bullet_count), player_center))
+                    b.append(Bullet(self.bullet_type, shooting_position, i*(360/self.bullet_count), player_center, self.cached_bullet))
             if self.shootingpattern == "wall":
-                b.append(Bullet(self.bullet_type, shooting_position, 0, player_center))
+                b.append(Bullet(self.bullet_type, shooting_position, 0, player_center, self.cached_bullet))
                 spread = 10 # degrees per bullet
                 for i in range(self.bullet_count):
                     b.append(Bullet(self.bullet_type, shooting_position, (i+1)*spread, player_center))

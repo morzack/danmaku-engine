@@ -3,13 +3,14 @@ import json
 
 from .utils import clamp
 from .bullet import Bullet
+from .spritecache import SpriteCache, CachedBullet
 
 class Player:
     """
     the player. pretty self explanatory i hope
     """
 
-    def __init__(self, config_data):
+    def __init__(self, config_data, cached_data : SpriteCache):
         """
         config_data should be the json data config for the _game_ preloaded into a dict
         """
@@ -41,6 +42,7 @@ class Player:
 
         # bullets that the player will keep track of
         self.bullets = []
+        self.cached_bullet = cached_data.bullet_sprites["playerbullet"]
 
         # used to regulate fire
         self.last_shot = -self.frames_between_shots
@@ -55,8 +57,8 @@ class Player:
         b = []
         if self.last_shot+self.frames_between_shots < current_time:
             # TODO change this based on player shot type configuration and power
-            b.append(Bullet("playerbullet", [self.x+self.width/2-self.barreloffset, self.y], 180))
-            b.append(Bullet("playerbullet", [self.x+self.width/2+self.barreloffset, self.y], 180))
+            b.append(Bullet("playerbullet", [self.x+self.width/2-self.barreloffset, self.y], 180, self.cached_bullet))
+            b.append(Bullet("playerbullet", [self.x+self.width/2+self.barreloffset, self.y], 180, self.cached_bullet))
             self.last_shot = current_time
         return b
 

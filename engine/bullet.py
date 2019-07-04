@@ -4,15 +4,24 @@ import json
 import math
 
 from .utils import check_bounds, calculate_angle
+from .spritecache import CachedBullet
 
 class Bullet:
     BULLETSCALECOEF = 1.25 # extend image outside hitbox
-    def __init__(self, name, position, rotation, target=[0,0]):
-        with open(f"data/configuration.json", 'r') as f:
-            self.game_config = json.load(f)
-
-        with open(f"data/bullets/bullets.json", 'r') as f:
-            config = json.load(f)[name]
+    def __init__(self, name, position, rotation, target=[0,0], cachedbullet : CachedBullet = None):
+        if cachedbullet == None:
+            with open(f"data/bullets/bullets.json", 'r') as f:
+                config = json.load(f)[name]
+            with open(f"data/configuration.json", 'r') as f:
+                gameconfig = json.load(f)
+                self.bound_x = gameconfig["width"]
+                self.bound_y = gameconfig["height"]
+            self.image = pygame.image.load(f"data/bullets/images/{config['image_location']}.png").convert_alpha()
+        else:
+            config = cachedbullet.data
+            self.bound_x = cachedbullet.bound_x
+            self.bound_y = cachedbullet.bound_y
+            self.image = cachedbullet.image
 
         self.radius = config["radius"]
         self.speed = config["speed"]
@@ -31,7 +40,6 @@ class Bullet:
 
         self.image_rotation = self.rotation-180
 
-        self.image = pygame.image.load(f"data/bullets/images/{config['image_location']}.png")
         self.image = pygame.transform.scale(self.image, (int(self.radius*2*Bullet.BULLETSCALECOEF), int(self.radius*2*Bullet.BULLETSCALECOEF)))
         self.image = pygame.transform.rotate(self.image, self.image_rotation)
 
@@ -45,7 +53,7 @@ class Bullet:
         """
         returns True if the bullet is in bounds, otherwise false
         """
-        return (check_bounds(self.x, 0, self.game_config["width"]) and check_bounds(self.y, 0, self.game_config["height"]))
+        return (check_bounds(self.x, 0, self.bound_x) and check_bounds(self.y, 0, self.bound_y))
 
     def update(self, surface : pygame.Surface):
         r = math.radians(self.rotation)

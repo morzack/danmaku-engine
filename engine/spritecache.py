@@ -14,9 +14,11 @@ class CachedEnemy:
         self.image = pygame.image.load(f"data/enemies/images/{self.data['image']}.png").convert_alpha()
 
 class CachedBullet:
-    def __init__(self, bullet_data):
+    def __init__(self, bullet_data, game_config_data):
         self.data = bullet_data
         self.image = pygame.image.load(f"data/bullets/images/{self.data['image_location']}.png").convert_alpha()
+        self.bound_x = game_config_data["width"]
+        self.bound_y = game_config_data["height"]
 
 class SpriteCache:
     def __init__(self, level_id):
@@ -29,6 +31,8 @@ class SpriteCache:
 
         level_dir = f"data/levels/{level_id}"
 
+        with open("data/configuration.json", 'r') as f:
+            game_config_data = json.load(f)
         with open(f"{level_dir}/enemies.json", 'r') as f:
             self.level_enemy_data = json.load(f)["enemies"]
         with open(f"data/paths.json", 'r') as f:
@@ -44,6 +48,11 @@ class SpriteCache:
             if enemy_id not in self.referenced_enemies:
                 self.referenced_enemies.append(enemy_id)
         
+        # load in more specific enemy data
+        self.enemy_data_by_id = {}
+        for enemy in self.level_enemy_data:
+            self.enemy_data_by_id[enemy["id"]] = enemy
+
         # load in paths
         self.paths = {}
         for path in path_data:
@@ -55,7 +64,7 @@ class SpriteCache:
 
         # load bullet data
         for bullet in all_bullet_data:
-            self.bullet_sprites[bullet] = CachedBullet(all_bullet_data[bullet])
+            self.bullet_sprites[bullet] = CachedBullet(all_bullet_data[bullet], game_config_data)
 
     def get_cached_bullet(self, i):
         return self.bullet_sprites[i]

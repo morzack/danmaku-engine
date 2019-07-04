@@ -30,7 +30,7 @@ class Level(State):
         self.background = pygame.transform.scale(self.background, (config_data["width"], config_data["height"]))
 
         # load objects
-        self.player = Player(config_data)
+        self.player = Player(config_data, self.cached_level_data)
 
         self.enemies = []
         with open(f"{level_directory}/enemies.json", 'r') as f:
