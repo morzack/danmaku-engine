@@ -11,7 +11,7 @@ class Bullet:
     def __init__(self, name, position, rotation, target=[0,0], cachedbullet : CachedBullet = None):
         if cachedbullet == None:
             with open(f"data/bullets/bullets.json", 'r') as f:
-                config = json.load(f)[name]
+                config = json.load(f)["bullets"][name]
             with open(f"data/configuration.json", 'r') as f:
                 gameconfig = json.load(f)
                 self.bound_x = gameconfig["width"]

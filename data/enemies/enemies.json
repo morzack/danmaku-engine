@@ -1,66 +1,121 @@
 {
-    "hypertesthoming" : {
-        "width" : 40,
-        "height" : 40,
-    
-        "shootrate" : 30,
-    
-        "hitbox" : 15,
-    
-        "health" : 10,
-    
-        "bullettype" : "hyperhoming",
-        "shootingpattern" : "line",
-        "bullets": 3,
-
-        "image" : "b1"
+    "defaults": {
+        "smallenemy": {
+            "width": 30,
+            "height": 30,
+            "hitbox": 15
+        },
+        "mediumenemy": {
+            "width": 40,
+            "height": 40,
+            "hitbox": 20
+        },
+        "largeenemy": {
+            "width": 60,
+            "height": 60,
+            "hitbox": 30
+        },
+        "slowline": {
+            "shootrate": 60,
+            "shootingpattern": "line",
+            "bullets": 5
+        },
+        "fastline": {
+            "shootrate": 30,
+            "shootingpattern": "line",
+            "bullets": 3
+        },
+        "slowcircle": {
+            "shootrate": 80,
+            "shootingpattern": "circle",
+            "bullets": 10
+        },
+        "fastcircle": {
+            "shootrate": 40,
+            "shootingpattern": "circle",
+            "bullets": 7
+        },
+        "slowwall": {
+            "shootrate": 70,
+            "shootingpattern": "wall",
+            "bullets": 3
+        },
+        "fastwall": {
+            "shootrate": 50,
+            "shootingpattern": "wall",
+            "bullets": 2
+        }
     },
-    "testcircle" : {
-        "width" : 40,
-        "height" : 40,
-    
-        "shootrate" : 80,
-    
-        "hitbox" : 17,
-    
-        "health" : 15,
-    
-        "bullettype" : "basicnondirectional",
-        "shootingpattern" : "circle",
-        "bullets": 10,
-
-        "image" : "b2"
+    "images": {
+        "homing": {
+            "green": "g1",
+            "blue": "b2"
+        },
+        "tank": {
+            "green": "g2",
+            "blue": "b1"
+        }
     },
-    "testhoming" : {
-        "width" : 40,
-        "height" : 40,
-    
-        "shootrate" : 40,
-    
-        "hitbox" : 15,
-    
-        "health" : 5,
-    
-        "bullettype" : "basichoming",
-        "shootingpattern" : "line",
-        "bullets": 3,
-
-        "image" : "g1"
-    },
-    "testhomingwall" : {
-        "width" : 40,
-        "height" : 40,
-    
-        "shootrate" : 70,
-    
-        "hitbox" : 15,
-    
-        "health" : 10,
-    
-        "bullettype" : "hyperhoming",
-        "shootingpattern" : "wall",
-        "bullets": 2,
-
-        "image" : "g2"
+    "enemies": {
+        "hypertesthoming": {
+            "size": {
+                "width": 40,
+                "height": 40,
+                "hitbox": 20
+            },
+            "shotpattern": {
+                "shootrate": 30,
+                "shootingpattern": "line",
+                "bullets": 3
+            },
+            "bullettype": "hyperhoming",
+            "image": "g1",
+            "health": 7
+        },
+        "testcircle": {
+            "size": {
+                "width": 40,
+                "height": 40,
+                "hitbox": 20
+            },
+            "shotpattern": {
+                "shootrate": 80,
+                "shootingpattern": "circle",
+                "bullets": 10
+            },
+            "bullettype": "basicnondirectional",
+            "image": "b1",
+            "health": 15
+        },
+        "testhoming": {
+            "size": {
+                "width": 40,
+                "height": 40,
+                "hitbox": 20
+            },
+            "shotpattern": {
+                "shootrate": 60,
+                "shootingpattern": "line",
+                "bullets": 5
+            },
+            "bullettype": "basichoming",
+            "image": "b2",
+            "health": 5
+        },
+        "testhomingwall": {
+            "size": {
+                "width": 40,
+                "height": 40,
+                "hitbox": 20
+            },
+            "shotpattern": {
+                "shootrate": 70,
+                "shootingpattern": "wall",
+                "bullets": 3
+            },
+            "bullettype": "basicnondirectional",
+            "image": "g2",
+            "health": 15
+        }
     }
 }

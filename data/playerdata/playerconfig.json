@@ -1,12 +1,9 @@
 {
-    "width" : 50,
-    "height" : 50,
-    
-    "hitbox" : 10,
-
-    "speed" : 4,
-    "slowedmodifier" : 0.5,
-
-    "shootrate" : 3,
-    "barreloffset" : 10
+    "width": 50,
+    "height": 50,
+    "hitbox": 10,
+    "speed": 4,
+    "slowedmodifier": 0.5,
+    "shootrate": 3,
+    "barreloffset": 10
 }

@@ -1,331 +1,504 @@
 {
-    "enemies" : [
+    "types": {
+        "wall": {
+            "homing": "testhomingwall"
+        },
+        "circle": {
+            "default": "testcircle"
+        },
+        "line": {
+            "default": "testhoming",
+            "hyper": "hypertesthoming"
+        }
+    },
+    "paths": {
+        "u": "topu",
+        "tsu": "toptsu",
+        "l": "L",
+        "j": "J",
+        "loop": "loop",
+        "blup": "leftbottomup",
+        "oofloop": "oof de loop"
+    },
+    "waves": {
+        "a": {
+            "path": "topu",
+            "starttime": 100,
+            "endtime": 800,
+            "spacing": 30
+        },
+        "b": {
+            "path": "toptsu",
+            "starttime": 220,
+            "endtime": 800,
+            "spacing": 30
+        },
+        "c": {
+            "path": "L",
+            "starttime": 800,
+            "endtime": 1600,
+            "spacing": 20
+        },
+        "d": {
+            "path": "J",
+            "starttime": 900,
+            "endtime": 1600,
+            "spacing": 20
+        },
+        "e": {
+            "path": "J",
+            "starttime": 1400,
+            "endtime": 2000,
+            "spacing": 40
+        },
+        "f": {
+            "path": "L",
+            "starttime": 1400,
+            "endtime": 2000,
+            "spacing": 40
+        },
+        "g": {
+            "path": "loop",
+            "starttime": 1810,
+            "endtime": 2400,
+            "spacing": 10
+        },
+        "h": {
+            "path": "leftbottomup",
+            "starttime": 1950,
+            "endtime": 2400,
+            "spacing": 10
+        },
+        "i": {
+            "path": "oof de loop",
+            "starttime": 2210,
+            "endtime": 3000,
+            "spacing": 10
+        }
+    },
+    "enemies": [
         {
-            "id" : "1",
-            "type" : "testhomingwall",
-            "entrytime" : 100,
-            "exittime" : 800,
-            "path" : "topu"
+            "wave": {
+                "path": "topu",
+                "starttime": 100,
+                "endtime": 800,
+                "spacing": 30
+            },
+            "type": "testhomingwall"
         },
         {
-            "id" : "2",
-            "type" : "testcircle",
-            "entrytime" : 130,
-            "exittime" : 800,
-            "path" : "topu"
+            "wave": {
+                "path": "topu",
+                "starttime": 100,
+                "endtime": 800,
+                "spacing": 30
+            },
+            "type": "testcircle"
         },
         {
-            "id" : "3",
-            "type" : "testhoming",
-            "entrytime" : 160,
-            "exittime" : 800,
-            "path" : "topu"
+            "wave": {
+                "path": "topu",
+                "starttime": 100,
+                "endtime": 800,
+                "spacing": 30
+            },
+            "type": "testhoming"
         },
         {
-            "id" : "4",
-            "type" : "testhoming",
-            "entrytime" : 190,
-            "exittime" : 800,
-            "path" : "toptsu"
+            "wave": {
+                "path": "toptsu",
+                "starttime": 220,
+                "endtime": 800,
+                "spacing": 30
+            },
+            "type": "testhoming"
         },
         {
-            "id" : "5",
-            "type" : "testcircle",
-            "entrytime" : 220,
-            "exittime" : 800,
-            "path" : "toptsu"
+            "wave": {
+                "path": "toptsu",
+                "starttime": 220,
+                "endtime": 800,
+                "spacing": 30
+            },
+            "type": "testcircle"
         },
         {
-            "id" : "6",
-            "type" : "testhomingwall",
-            "entrytime" : 250,
-            "exittime" : 800,
-            "path" : "toptsu"
+            "wave": {
+                "path": "toptsu",
+                "starttime": 220,
+                "endtime": 800,
+                "spacing": 30
+            },
+            "type": "testhomingwall"
         },
         {
-            "id" : "7",
-            "type" : "testcircle",
-            "entrytime" : 280,
-            "exittime" : 800,
-            "path" : "toptsu"
+            "wave": {
+                "path": "toptsu",
+                "starttime": 220,
+                "endtime": 800,
+                "spacing": 30
+            },
+            "type": "testcircle"
         },
         {
-            "id" : "8",
-            "type" : "testhoming",
-            "entrytime" : 310,
-            "exittime" : 800,
-            "path" : "toptsu"
+            "wave": {
+                "path": "toptsu",
+                "starttime": 220,
+                "endtime": 800,
+                "spacing": 30
+            },
+            "type": "testhoming"
         },
         {
-            "id" : "9",
-            "type" : "testhoming",
-            "entrytime" : 800,
-            "exittime" : 1600,
-            "path" : "L"
+            "wave": {
+                "path": "L",
+                "starttime": 800,
+                "endtime": 1600,
+                "spacing": 20
+            },
+            "type": "testhoming"
         },
         {
-            "id" : "10",
-            "type" : "testhomingwall",
-            "entrytime" : 820,
-            "exittime" : 1600,
-            "path" : "L"
+            "wave": {
+                "path": "L",
+                "starttime": 800,
+                "endtime": 1600,
+                "spacing": 20
+            },
+            "type": "testhomingwall"
         },
         {
-            "id" : "11",
-            "type" : "testhomingwall",
-            "entrytime" : 840,
-            "exittime" : 1600,
-            "path" : "L"
+            "wave": {
+                "path": "L",
+                "starttime": 800,
+                "endtime": 1600,
+                "spacing": 20
+            },
+            "type": "testhomingwall"
         },
         {
-            "id" : "12",
-            "type" : "testcircle",
-            "entrytime" : 860,
-            "exittime" : 1600,
-            "path" : "L"
+            "wave": {
+                "path": "L",
+                "starttime": 800,
+                "endtime": 1600,
+                "spacing": 20
+            },
+            "type": "testcircle"
         },
         {
-            "id" : "13",
-            "type" : "testhoming",
-            "entrytime" : 900,
-            "exittime" : 1600,
-            "path" : "J"
+            "wave": {
+                "path": "J",
+                "starttime": 900,
+                "endtime": 1600,
+                "spacing": 20
+            },
+            "type": "testhoming"
         },
         {
-            "id" : "14",
-            "type" : "testhomingwall",
-            "entrytime" : 920,
-            "exittime" : 1600,
-            "path" : "J"
+            "wave": {
+                "path": "J",
+                "starttime": 900,
+                "endtime": 1600,
+                "spacing": 20
+            },
+            "type": "testhomingwall"
         },
         {
-            "id" : "15",
-            "type" : "testhomingwall",
-            "entrytime" : 940,
-            "exittime" : 1600,
-            "path" : "J"
+            "wave": {
+                "path": "J",
+                "starttime": 900,
+                "endtime": 1600,
+                "spacing": 20
+            },
+            "type": "testhomingwall"
         },
         {
-            "id" : "16",
-            "type" : "testcircle",
-            "entrytime" : 960,
-            "exittime" : 1600,
-            "path" : "J"
+            "wave": {
+                "path": "J",
+                "starttime": 900,
+                "endtime": 1600,
+                "spacing": 20
+            },
+            "type": "testcircle"
         },
         {
-            "id" : "17",
-            "type" : "hypertesthoming",
-            "entrytime" : 1400,
-            "exittime" : 2000,
-            "path" : "J"
+            "wave": {
+                "path": "J",
+                "starttime": 1400,
+                "endtime": 2000,
+                "spacing": 40
+            },
+            "type": "hypertesthoming"
         },
         {
-            "id" : "18",
-            "type" : "testcircle",
-            "entrytime" : 1460,
-            "exittime" : 2000,
-            "path" : "J"
+            "wave": {
+                "path": "J",
+                "starttime": 1400,
+                "endtime": 2000,
+                "spacing": 40
+            },
+            "type": "testcircle"
         },
         {
-            "id" : "19",
-            "type" : "hypertesthoming",
-            "entrytime" : 1400,
-            "exittime" : 2000,
-            "path" : "L"
+            "wave": {
+                "path": "L",
+                "starttime": 1400,
+                "endtime": 2000,
+                "spacing": 40
+            },
+            "type": "hypertesthoming"
         },
         {
-            "id" : "20",
-            "type" : "testcircle",
-            "entrytime" : 1460,
-            "exittime" : 2000,
-            "path" : "L"
+            "wave": {
+                "path": "L",
+                "starttime": 1400,
+                "endtime": 2000,
+                "spacing": 40
+            },
+            "type": "testcircle"
         },
         {
-            "id" : "21",
-            "type" : "hypertesthoming",
-            "entrytime" : 1810,
-            "exittime" : 2400,
-            "path" : "loop"
+            "wave": {
+                "path": "loop",
+                "starttime": 1810,
+                "endtime": 2400,
+                "spacing": 10
+            },
+            "type": "hypertesthoming"
         },
         {
-            "id" : "22",
-            "type" : "testhoming",
-            "entrytime" : 1820,
-            "shootstart" : 1870,
-            "exittime" : 2400,
-            "path" : "loop"
+            "wave": {
+                "path": "loop",
+                "starttime": 1810,
+                "endtime": 2400,
+                "spacing": 10
+            },
+            "type": "testhoming"
         },
         {
-            "id" : "23",
-            "type" : "testhoming",
-            "entrytime" : 1830,
-            "shootstart" : 1870,
-            "exittime" : 2400,
-            "path" : "loop"
+            "wave": {
+                "path": "loop",
+                "starttime": 1810,
+                "endtime": 2400,
+                "spacing": 10
+            },
+            "type": "testhoming"
         },
         {
-            "id" : "24",
-            "type" : "testhoming",
-            "entrytime" : 1840,
-            "shootstart" : 1870,
-            "exittime" : 2400,
-            "path" : "loop"
+            "wave": {
+                "path": "loop",
+                "starttime": 1810,
+                "endtime": 2400,
+                "spacing": 10
+            },
+            "type": "testhoming"
         },
         {
-            "id" : "25",
-            "type" : "testhoming",
-            "entrytime" : 1850,
-            "shootstart" : 1870,
-            "exittime" : 2400,
-            "path" : "loop"
+            "wave": {
+                "path": "loop",
+                "starttime": 1810,
+                "endtime": 2400,
+                "spacing": 10
+            },
+            "type": "testhoming"
         },
         {
-            "id" : "26",
-            "type" : "testhoming",
-            "entrytime" : 1860,
-            "shootstart" : 1870,
-            "exittime" : 2400,
-            "path" : "loop"
+            "wave": {
+                "path": "loop",
+                "starttime": 1810,
+                "endtime": 2400,
+                "spacing": 10
+            },
+            "type": "testhoming"
         },
         {
-            "id" : "27",
-            "type" : "testhoming",
-            "entrytime" : 1870,
-            "shootstart" : 1870,
-            "exittime" : 2400,
-            "path" : "loop"
+            "wave": {
+                "path": "loop",
+                "starttime": 1810,
+                "endtime": 2400,
+                "spacing": 10
+            },
+            "type": "testhoming"
         },
         {
-            "id" : "28",
-            "type" : "testcircle",
-            "entrytime" : 1880,
-            "exittime" : 2400,
-            "path" : "loop"
+            "wave": {
+                "path": "loop",
+                "starttime": 1810,
+                "endtime": 2400,
+                "spacing": 10
+            },
+            "type": "testcircle"
         },
         {
-            "id" : "37",
-            "type" : "testhoming",
-            "entrytime" : 1950,
-            "exittime" : 2400,
-            "path" : "leftbottomup"
+            "wave": {
+                "path": "leftbottomup",
+                "starttime": 1950,
+                "endtime": 2400,
+                "spacing": 10
+            },
+            "type": "testhoming"
         },
         {
-            "id" : "29",
-            "type" : "testhomingwall",
-            "entrytime" : 2010,
-            "exittime" : 2400,
-            "path" : "leftbottomup"
+            "wave": {
+                "path": "leftbottomup",
+                "starttime": 1950,
+                "endtime": 2400,
+                "spacing": 10
+            },
+            "type": "testhomingwall"
         },
         {
-            "id" : "30",
-            "type" : "testhoming",
-            "entrytime" : 2020,
-            "exittime" : 2400,
-            "path" : "leftbottomup"
+            "wave": {
+                "path": "leftbottomup",
+                "starttime": 1950,
+                "endtime": 2400,
+                "spacing": 10
+            },
+            "type": "testhoming"
         },
         {
-            "id" : "31",
-            "type" : "testhoming",
-            "entrytime" : 2030,
-            "exittime" : 2400,
-            "path" : "leftbottomup"
+            "wave": {
+                "path": "leftbottomup",
+                "starttime": 1950,
+                "endtime": 2400,
+                "spacing": 10
+            },
+            "type": "testhoming"
         },
         {
-            "id" : "32",
-            "type" : "testhoming",
-            "entrytime" : 2040,
-            "exittime" : 2400,
-            "path" : "leftbottomup"
+            "wave": {
+                "path": "leftbottomup",
+                "starttime": 1950,
+                "endtime": 2400,
+                "spacing": 10
+            },
+            "type": "testhoming"
         },
         {
-            "id" : "33",
-            "type" : "testhoming",
-            "entrytime" : 2050,
-            "exittime" : 2400,
-            "path" : "leftbottomup"
+            "wave": {
+                "path": "leftbottomup",
+                "starttime": 1950,
+                "endtime": 2400,
+                "spacing": 10
+            },
+            "type": "testhoming"
         },
         {
-            "id" : "34",
-            "type" : "testhoming",
-            "entrytime" : 2060,
-            "exittime" : 2400,
-            "path" : "leftbottomup"
+            "wave": {
+                "path": "leftbottomup",
+                "starttime": 1950,
+                "endtime": 2400,
+                "spacing": 10
+            },
+            "type": "testhoming"
         },
         {
-            "id" : "35",
-            "type" : "testhoming",
-            "entrytime" : 2070,
-            "exittime" : 2400,
-            "path" : "leftbottomup"
+            "wave": {
+                "path": "leftbottomup",
+                "starttime": 1950,
+                "endtime": 2400,
+                "spacing": 10
+            },
+            "type": "testhoming"
         },
         {
-            "id" : "36",
-            "type" : "testcircle",
-            "entrytime" : 2080,
-            "exittime" : 2400,
-            "path" : "leftbottomup"
+            "wave": {
+                "path": "leftbottomup",
+                "starttime": 1950,
+                "endtime": 2400,
+                "spacing": 10
+            },
+            "type": "testhoming"
         },
         {
-            "id" : "38",
-            "type" : "testhomingwall",
-            "entrytime" : 2110,
-            "exittime" : 3000,
-            "path" : "oof de loop"
+            "wave": {
+                "path": "leftbottomup",
+                "starttime": 1950,
+                "endtime": 2400,
+                "spacing": 10
+            },
+            "type": "testcircle"
         },
         {
-            "id" : "39",
-            "type" : "testhoming",
-            "entrytime" : 2120,
-            "shootstart" : 2170,
-            "exittime" : 3000,
-            "path" : "oof de loop"
+            "wave": {
+                "path": "oof de loop",
+                "starttime": 2210,
+                "endtime": 3000,
+                "spacing": 10
+            },
+            "type": "testhomingwall"
         },
         {
-            "id" : "40",
-            "type" : "testhoming",
-            "entrytime" : 2130,
-            "shootstart" : 2170,
-            "exittime" : 3000,
-            "path" : "oof de loop"
+            "wave": {
+                "path": "oof de loop",
+                "starttime": 2210,
+                "endtime": 3000,
+                "spacing": 10
+            },
+            "type": "testhoming"
         },
         {
-            "id" : "41",
-            "type" : "testhoming",
-            "entrytime" : 2140,
-            "shootstart" : 2170,
-            "exittime" : 3000,
-            "path" : "oof de loop"
+            "wave": {
+                "path": "oof de loop",
+                "starttime": 2210,
+                "endtime": 3000,
+                "spacing": 10
+            },
+            "type": "testhoming"
         },
         {
-            "id" : "42",
-            "type" : "testhoming",
-            "entrytime" : 2150,
-            "shootstart" : 2170,
-            "exittime" : 3000,
-            "path" : "oof de loop"
+            "wave": {
+                "path": "oof de loop",
+                "starttime": 2210,
+                "endtime": 3000,
+                "spacing": 10
+            },
+            "type": "testhoming"
         },
         {
-            "id" : "43",
-            "type" : "testhoming",
-            "entrytime" : 2160,
-            "shootstart" : 2170,
-            "exittime" : 3000,
-            "path" : "oof de loop"
+            "wave": {
+                "path": "oof de loop",
+                "starttime": 2210,
+                "endtime": 3000,
+                "spacing": 10
+            },
+            "type": "testhoming"
         },
         {
-            "id" : "44",
-            "type" : "testhoming",
-            "entrytime" : 2170,
-            "shootstart" : 2170,
-            "exittime" : 3000,
-            "path" : "oof de loop"
+            "wave": {
+                "path": "oof de loop",
+                "starttime": 2210,
+                "endtime": 3000,
+                "spacing": 10
+            },
+            "type": "testhoming"
         },
         {
-            "id" : "45",
-            "type" : "testcircle",
-            "entrytime" : 2180,
-            "exittime" : 3000,
-            "path" : "oof de loop"
+            "wave": {
+                "path": "oof de loop",
+                "starttime": 2210,
+                "endtime": 3000,
+                "spacing": 10
+            },
+            "type": "testhoming"
+        },
+        {
+            "wave": {
+                "path": "oof de loop",
+                "starttime": 2210,
+                "endtime": 3000,
+                "spacing": 10
+            },
+            "type": "testhoming"
+        },
+        {
+            "wave": {
+                "path": "oof de loop",
+                "starttime": 2210,
+                "endtime": 3000,
+                "spacing": 10
+            },
+            "type": "testcircle"
         }
     ]
 }

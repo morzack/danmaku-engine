@@ -35,8 +35,15 @@ class Level(State):
         self.enemies = []
         with open(f"{level_directory}/enemies.json", 'r') as f:
             enemy_level_data = json.load(f)
-        for enemy in enemy_level_data["enemies"]:
-            self.enemies.append(Enemy(enemy["id"], self.level_number, self.cached_level_data))
+
+        wave_counter = 0
+        last_wave = None
+        for i, enemy in list(zip(range(len(enemy_level_data["enemies"])), enemy_level_data["enemies"])):
+            if last_wave != enemy["wave"]:
+                wave_counter = 0
+                last_wave = enemy["wave"]
+            self.enemies.append(Enemy(str(i), wave_counter, self.cached_level_data))
+            wave_counter += 1
 
     def process_event(self, event : pygame.event.EventType):
         """

@@ -1,27 +1,36 @@
 {
-    "basichoming" : {
-        "speed" : 2,
-        "radius" : 5,
-        "image_location" : "greenblob",
-        "locking" : true
+    "images": {
+        "bullets": {
+            "green": "greenblob"
+        },
+        "circles": {
+            "red": "redcircle"
+        }
     },
-    "basicnondirectional" : {
-        "speed" : 1.5,
-        "radius" : 10,
-        "image_location" : "redcircle",
-        "locking" : false,
-        "imagespinrate" : 0
-    },
-    "hyperhoming" : {
-        "speed" : 4,
-        "radius" : 5,
-        "image_location" : "greenblob",
-        "locking" : true
-    },
-    "playerbullet" : {
-        "speed" : 20,
-        "radius" : 8,
-        "image_location" : "playerbullet",
-        "locking" : false
+    "bullets": {
+        "basichoming": {
+            "speed": 2,
+            "radius": 5,
+            "image_location": "greenblob",
+            "locking": true
+        },
+        "basicnondirectional": {
+            "speed": 1.5,
+            "radius": 10,
+            "image_location": "redcircle",
+            "locking": false
+        },
+        "hyperhoming": {
+            "speed": 4,
+            "radius": 5,
+            "image_location": "greenblob",
+            "locking": true
+        },
+        "playerbullet": {
+            "speed": 20,
+            "radius": 8,
+            "image_location": "playerbullet",
+            "locking": false
+        }
     }
 }

@@ -10,12 +10,15 @@ class Enemy:
     MOVEMENTERRORTOLERANCE = 2
     ROTATIONSPEED = 20
 
-    def __init__(self, enemyID, level, spritecache : SpriteCache):
-        self.enemy_level_data = spritecache.enemy_data_by_id[enemyID]
-        self.path_object = spritecache.paths[self.enemy_level_data["path"]]
+    def __init__(self, enemyID, waveID, spritecache : SpriteCache):
+        self.enemy_level_data = spritecache.level_enemy_data[int(enemyID)]
+        self.path_object = spritecache.paths[self.enemy_level_data["wave"]["path"]]
         self.max_speed = self.path_object.max_speed
         self.path = self.path_object.path
         self.rotate_path = self.path_object.rotate_path
+
+        self.starttime = self.enemy_level_data["wave"]["starttime"]+self.enemy_level_data["wave"]["spacing"]*int(waveID)
+        self.endtime = self.enemy_level_data["wave"]["endtime"]
 
         self.type = self.enemy_level_data["type"]
 
@@ -25,7 +28,7 @@ class Enemy:
         self.alive = True
 
         self.image = self.enemy_data.image
-        self.image = pygame.transform.scale(self.image, [self.enemy_data.data["width"], self.enemy_data.data["height"]])
+        self.image = pygame.transform.scale(self.image, [self.enemy_data.data["size"]["width"], self.enemy_data.data["size"]["height"]])
 
         self.x = float(self.path[0][0])
         self.y = float(self.path[0][1])
@@ -36,14 +39,14 @@ class Enemy:
         
         self.bullets = []
 
-        self.hitbox = self.enemy_data.data["hitbox"]
-        self.frames_between_shots = self.enemy_data.data["shootrate"]
+        self.hitbox = self.enemy_data.data["size"]["hitbox"]
+        self.frames_between_shots = self.enemy_data.data["shotpattern"]["shootrate"]
         self.last_shot = 0 if not "shootstart" in self.enemy_level_data else self.enemy_level_data["shootstart"]
 
         self.health = self.enemy_data.data["health"]
 
-        self.shootingpattern = self.enemy_data.data["shootingpattern"]
-        self.bullet_count = self.enemy_data.data["bullets"]
+        self.shootingpattern = self.enemy_data.data["shotpattern"]["shootingpattern"]
+        self.bullet_count = self.enemy_data.data["shotpattern"]["bullets"]
         self.bullet_type = self.enemy_data.data["bullettype"]
 
         self.cached_bullet = spritecache.bullet_sprites[self.bullet_type]
@@ -98,9 +101,9 @@ class Enemy:
 
         if self.health <= 0:
             self.alive = False
-        if current_time > self.enemy_level_data["entrytime"]:
+        if current_time > self.starttime:
             self.active = True
-        if current_time > self.enemy_level_data["exittime"]:
+        if current_time > self.endtime:
             self.active = False
             self.alive = False
         if not (self.active and self.alive):

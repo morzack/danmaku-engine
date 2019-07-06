@@ -40,19 +40,14 @@ class SpriteCache:
         with open("data/enemies/enemies.json", 'r') as f:
             all_enemy_data = json.load(f)
         with open("data/bullets/bullets.json", 'r') as f:
-            all_bullet_data = json.load(f)
+            all_bullet_data = json.load(f)["bullets"]
 
         # build a list of all enemies referenced in this level
         self.referenced_enemies = []
         for enemy_id in [x["type"] for x in self.level_enemy_data]:
             if enemy_id not in self.referenced_enemies:
                 self.referenced_enemies.append(enemy_id)
-        
-        # load in more specific enemy data
-        self.enemy_data_by_id = {}
-        for enemy in self.level_enemy_data:
-            self.enemy_data_by_id[enemy["id"]] = enemy
-
+    
         # load in paths
         self.paths = {}
         for path in path_data:
@@ -60,7 +55,7 @@ class SpriteCache:
         
         # load enemy ids based on sprites
         for enemy in self.referenced_enemies:
-            self.enemy_sprites[enemy] = CachedEnemy(all_enemy_data[enemy])
+            self.enemy_sprites[enemy] = CachedEnemy(all_enemy_data["enemies"][enemy])
 
         # load bullet data
         for bullet in all_bullet_data:
