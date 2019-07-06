@@ -2,7 +2,7 @@ import pygame
 
 import json
 
-from engine.userinterface import get_input
+from engine.userinterface import get_input, FontRenderer
 
 from engine.level import Level
 
@@ -29,6 +29,8 @@ def main():
 
     current_frame = 0
 
+    debug_font_renderer = FontRenderer()
+
     running = True
     while running:
         actualfps = config_data["framerate"]
@@ -36,13 +38,12 @@ def main():
         keys = get_input()
         if keys["quit"]:
             running = False
-
-        l0.update(screen, keys, current_frame)
-
-        # print(current_frame) # TODO make this render onscreen if there's a debug mode or something
-
-        pygame.event.pump() # TODO potentially have some kind of event hanlding for going through menus
-        pygame.display.flip()
+        if not keys["debugpause"]:
+            l0.update(screen, keys, current_frame)
+            # print(current_frame) # TODO make this render onscreen if there's a debug mode or something
+            debug_font_renderer.render_text(screen, 0, 0, current_frame)
+            current_frame += 1
 
         clock.tick(default_fps*(2 if debug_mode and keys["fpsup"] else 1))
-        current_frame += 1
+        pygame.event.pump() # TODO potentially have some kind of event hanlding for going through menus
+        pygame.display.flip()

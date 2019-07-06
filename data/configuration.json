@@ -3,5 +3,11 @@
     "height" : 700,
     "title" : "nineballs perfect piloting class",
     "framerate" : 60,
-    "debug" : true
+    "debug" : true,
+
+    "fontconfig" : {
+        "name" : "DejaVu Sans",
+        "size" : 40,
+        "color" : [255, 255, 255]
+    }
 }
