@@ -48,6 +48,11 @@ defaults: {
         shootingpattern: "wall"
         bullets: 2
     }
+    thiccwall: {
+        shootrate: 70
+        shootingpattern: "wall"
+        bullets: 5
+    }
 }
 
 // IMAGES
@@ -78,6 +83,13 @@ enemies: {
         image: images.tank.blue
         health: 15
     }
+    hypertestcircle: {
+        size: defaults.mediumenemy
+        shotpattern: defaults.fastcircle
+        bullettype: "hypernondirectional"
+        image: images.tank.blue
+        health: 8
+    }
     testhoming: {
         size: defaults.mediumenemy
         shotpattern: defaults.slowline
@@ -91,5 +103,12 @@ enemies: {
         bullettype: "basicnondirectional"
         image: images.tank.green
         health: 15
+    }
+    testhomingthiccwall: {
+        size: defaults.mediumenemy
+        shotpattern: defaults.thiccwall
+        bullettype: "hyperhoming"
+        image: images.tank.blue
+        health: 8
     }
 }

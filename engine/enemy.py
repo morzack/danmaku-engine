@@ -41,7 +41,7 @@ class Enemy:
 
         self.hitbox = self.enemy_data.data["size"]["hitbox"]
         self.frames_between_shots = self.enemy_data.data["shotpattern"]["shootrate"]
-        self.last_shot = 0 if not "shootstart" in self.enemy_level_data else self.enemy_level_data["shootstart"]
+        self.last_shot = self.starttime-self.enemy_level_data["wave"]["spacing"]*2 if not "shootstart" in self.enemy_level_data else self.enemy_level_data["shootstart"]
 
         self.health = self.enemy_data.data["health"]
 
@@ -126,7 +126,10 @@ class Enemy:
                 image_rot -= self.rotation
                 if image_rot < -180:
                     image_rot += 360
-                self.rotation += image_rot/Enemy.ROTATIONSPEED
+                if self.current_waypoint != 0:
+                    self.rotation += image_rot/Enemy.ROTATIONSPEED
+                else:
+                    self.rotation += image_rot
 
         self.bullets.extend(self.shoot(current_time, player))
 

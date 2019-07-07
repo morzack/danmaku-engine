@@ -30,10 +30,17 @@ bullets: {
         image_location: images.circles.red
         locking: false
     }
+    
+    hypernondirectional: {
+        speed: 3
+        radius: 10
+        image_location: images.circles.red
+        locking: false
+    }
 
     hyperhoming: {
-        speed: 4
-        radius: 5
+        speed: 3
+        radius: 7
         image_location: images.bullets.green
         locking: true
     }

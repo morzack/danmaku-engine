@@ -17,6 +17,11 @@ class FontRenderer:
     def render_text(self, surface : pygame.Surface, x, y, text, color : pygame.Color = None):
         surface.blit(self.font.render(str(text), True, self.color if color == None else color), (x, y))
 
+def get_keypresses(key):
+    return {
+        "mark" : key == pygame.K_w
+    }
+
 def get_input():
     keys = pygame.key.get_pressed()
     return {

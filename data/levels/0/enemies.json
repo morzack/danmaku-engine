@@ -1,10 +1,13 @@
 {
+    "soundfile": "l0bgm",
     "types": {
         "wall": {
-            "homing": "testhomingwall"
+            "homing": "testhomingwall",
+            "thicc": "testhomingthiccwall"
         },
         "circle": {
-            "default": "testcircle"
+            "default": "testcircle",
+            "hyper": "hypertestcircle"
         },
         "line": {
             "default": "testhoming",
@@ -12,493 +15,529 @@
         }
     },
     "paths": {
-        "u": "topu",
-        "tsu": "toptsu",
-        "l": "L",
-        "j": "J",
-        "loop": "loop",
-        "blup": "leftbottomup",
-        "oofloop": "oof de loop"
+        "a": "tl-\u003etr",
+        "b": "tr-\u003etl",
+        "c": "tl-\u003ebl",
+        "d": "tr-\u003ebr"
     },
     "waves": {
         "a": {
-            "path": "topu",
-            "starttime": 100,
+            "path": "tl-\u003etr",
+            "starttime": 140,
             "endtime": 800,
-            "spacing": 30
+            "spacing": 21
         },
         "b": {
-            "path": "toptsu",
-            "starttime": 220,
+            "path": "tr-\u003etl",
+            "starttime": 300,
             "endtime": 800,
-            "spacing": 30
+            "spacing": 21
         },
         "c": {
-            "path": "L",
-            "starttime": 800,
-            "endtime": 1600,
-            "spacing": 20
+            "path": "tl-\u003ebl",
+            "starttime": 658,
+            "endtime": 1200,
+            "spacing": 8
         },
         "d": {
-            "path": "J",
-            "starttime": 900,
-            "endtime": 1600,
-            "spacing": 20
+            "path": "tr-\u003ebr",
+            "starttime": 658,
+            "endtime": 1200,
+            "spacing": 8
         },
         "e": {
-            "path": "J",
-            "starttime": 1400,
-            "endtime": 2000,
-            "spacing": 40
+            "path": "tl-\u003etr",
+            "starttime": 830,
+            "endtime": 1600,
+            "spacing": 21
         },
         "f": {
-            "path": "L",
-            "starttime": 1400,
-            "endtime": 2000,
-            "spacing": 40
+            "path": "tr-\u003etl",
+            "starttime": 995,
+            "endtime": 1600,
+            "spacing": 21
         },
         "g": {
-            "path": "loop",
-            "starttime": 1810,
-            "endtime": 2400,
-            "spacing": 10
+            "path": "tl-\u003ebl",
+            "starttime": 1340,
+            "endtime": 1600,
+            "spacing": 8
         },
         "h": {
-            "path": "leftbottomup",
-            "starttime": 1950,
-            "endtime": 2400,
-            "spacing": 10
-        },
-        "i": {
-            "path": "oof de loop",
-            "starttime": 2210,
-            "endtime": 3000,
-            "spacing": 10
+            "path": "tr-\u003ebr",
+            "starttime": 1340,
+            "endtime": 1600,
+            "spacing": 8
         }
     },
     "enemies": [
         {
             "wave": {
-                "path": "topu",
-                "starttime": 100,
+                "path": "tl-\u003etr",
+                "starttime": 140,
                 "endtime": 800,
-                "spacing": 30
+                "spacing": 21
             },
             "type": "testhomingwall"
         },
         {
             "wave": {
-                "path": "topu",
-                "starttime": 100,
+                "path": "tl-\u003etr",
+                "starttime": 140,
                 "endtime": 800,
-                "spacing": 30
+                "spacing": 21
             },
             "type": "testcircle"
         },
         {
             "wave": {
-                "path": "topu",
-                "starttime": 100,
+                "path": "tl-\u003etr",
+                "starttime": 140,
                 "endtime": 800,
-                "spacing": 30
+                "spacing": 21
             },
             "type": "testhoming"
         },
         {
             "wave": {
-                "path": "toptsu",
-                "starttime": 220,
+                "path": "tr-\u003etl",
+                "starttime": 300,
                 "endtime": 800,
-                "spacing": 30
-            },
-            "type": "testhoming"
-        },
-        {
-            "wave": {
-                "path": "toptsu",
-                "starttime": 220,
-                "endtime": 800,
-                "spacing": 30
-            },
-            "type": "testcircle"
-        },
-        {
-            "wave": {
-                "path": "toptsu",
-                "starttime": 220,
-                "endtime": 800,
-                "spacing": 30
+                "spacing": 21
             },
             "type": "testhomingwall"
         },
         {
             "wave": {
-                "path": "toptsu",
-                "starttime": 220,
+                "path": "tr-\u003etl",
+                "starttime": 300,
                 "endtime": 800,
-                "spacing": 30
+                "spacing": 21
             },
             "type": "testcircle"
         },
         {
             "wave": {
-                "path": "toptsu",
-                "starttime": 220,
+                "path": "tr-\u003etl",
+                "starttime": 300,
                 "endtime": 800,
-                "spacing": 30
+                "spacing": 21
             },
             "type": "testhoming"
         },
         {
             "wave": {
-                "path": "L",
-                "starttime": 800,
-                "endtime": 1600,
-                "spacing": 20
+                "path": "tl-\u003ebl",
+                "starttime": 658,
+                "endtime": 1200,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tl-\u003ebl",
+                "starttime": 658,
+                "endtime": 1200,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tl-\u003ebl",
+                "starttime": 658,
+                "endtime": 1200,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tl-\u003ebl",
+                "starttime": 658,
+                "endtime": 1200,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tl-\u003ebl",
+                "starttime": 658,
+                "endtime": 1200,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tl-\u003ebl",
+                "starttime": 658,
+                "endtime": 1200,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tl-\u003ebl",
+                "starttime": 658,
+                "endtime": 1200,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tl-\u003ebl",
+                "starttime": 658,
+                "endtime": 1200,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tl-\u003ebl",
+                "starttime": 658,
+                "endtime": 1200,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tl-\u003ebl",
+                "starttime": 658,
+                "endtime": 1200,
+                "spacing": 8
             },
             "type": "testhoming"
         },
         {
             "wave": {
-                "path": "L",
-                "starttime": 800,
+                "path": "tr-\u003ebr",
+                "starttime": 658,
+                "endtime": 1200,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tr-\u003ebr",
+                "starttime": 658,
+                "endtime": 1200,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tr-\u003ebr",
+                "starttime": 658,
+                "endtime": 1200,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tr-\u003ebr",
+                "starttime": 658,
+                "endtime": 1200,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tr-\u003ebr",
+                "starttime": 658,
+                "endtime": 1200,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tr-\u003ebr",
+                "starttime": 658,
+                "endtime": 1200,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tr-\u003ebr",
+                "starttime": 658,
+                "endtime": 1200,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tr-\u003ebr",
+                "starttime": 658,
+                "endtime": 1200,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tr-\u003ebr",
+                "starttime": 658,
+                "endtime": 1200,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tr-\u003ebr",
+                "starttime": 658,
+                "endtime": 1200,
+                "spacing": 8
+            },
+            "type": "testhoming"
+        },
+        {
+            "wave": {
+                "path": "tl-\u003etr",
+                "starttime": 830,
                 "endtime": 1600,
-                "spacing": 20
+                "spacing": 21
             },
             "type": "testhomingwall"
         },
         {
             "wave": {
-                "path": "L",
-                "starttime": 800,
+                "path": "tl-\u003etr",
+                "starttime": 830,
                 "endtime": 1600,
-                "spacing": 20
+                "spacing": 21
+            },
+            "type": "testcircle"
+        },
+        {
+            "wave": {
+                "path": "tl-\u003etr",
+                "starttime": 830,
+                "endtime": 1600,
+                "spacing": 21
+            },
+            "type": "testhoming"
+        },
+        {
+            "wave": {
+                "path": "tr-\u003etl",
+                "starttime": 995,
+                "endtime": 1600,
+                "spacing": 21
             },
             "type": "testhomingwall"
         },
         {
             "wave": {
-                "path": "L",
-                "starttime": 800,
+                "path": "tr-\u003etl",
+                "starttime": 995,
                 "endtime": 1600,
-                "spacing": 20
+                "spacing": 21
             },
             "type": "testcircle"
         },
         {
             "wave": {
-                "path": "J",
-                "starttime": 900,
+                "path": "tr-\u003etl",
+                "starttime": 995,
                 "endtime": 1600,
-                "spacing": 20
+                "spacing": 21
             },
             "type": "testhoming"
         },
         {
             "wave": {
-                "path": "J",
-                "starttime": 900,
+                "path": "tl-\u003ebl",
+                "starttime": 1340,
                 "endtime": 1600,
-                "spacing": 20
+                "spacing": 8
             },
-            "type": "testhomingwall"
+            "type": "hypertestcircle"
         },
         {
             "wave": {
-                "path": "J",
-                "starttime": 900,
+                "path": "tl-\u003ebl",
+                "starttime": 1340,
                 "endtime": 1600,
-                "spacing": 20
+                "spacing": 8
             },
-            "type": "testhomingwall"
+            "type": "hypertestcircle"
         },
         {
             "wave": {
-                "path": "J",
-                "starttime": 900,
+                "path": "tl-\u003ebl",
+                "starttime": 1340,
                 "endtime": 1600,
-                "spacing": 20
+                "spacing": 8
             },
-            "type": "testcircle"
+            "type": "hypertestcircle"
         },
         {
             "wave": {
-                "path": "J",
-                "starttime": 1400,
-                "endtime": 2000,
-                "spacing": 40
+                "path": "tl-\u003ebl",
+                "starttime": 1340,
+                "endtime": 1600,
+                "spacing": 8
             },
-            "type": "hypertesthoming"
+            "type": "hypertestcircle"
         },
         {
             "wave": {
-                "path": "J",
-                "starttime": 1400,
-                "endtime": 2000,
-                "spacing": 40
+                "path": "tl-\u003ebl",
+                "starttime": 1340,
+                "endtime": 1600,
+                "spacing": 8
             },
-            "type": "testcircle"
+            "type": "hypertestcircle"
         },
         {
             "wave": {
-                "path": "L",
-                "starttime": 1400,
-                "endtime": 2000,
-                "spacing": 40
+                "path": "tl-\u003ebl",
+                "starttime": 1340,
+                "endtime": 1600,
+                "spacing": 8
             },
-            "type": "hypertesthoming"
+            "type": "hypertestcircle"
         },
         {
             "wave": {
-                "path": "L",
-                "starttime": 1400,
-                "endtime": 2000,
-                "spacing": 40
+                "path": "tl-\u003ebl",
+                "starttime": 1340,
+                "endtime": 1600,
+                "spacing": 8
             },
-            "type": "testcircle"
+            "type": "hypertestcircle"
         },
         {
             "wave": {
-                "path": "loop",
-                "starttime": 1810,
-                "endtime": 2400,
-                "spacing": 10
+                "path": "tl-\u003ebl",
+                "starttime": 1340,
+                "endtime": 1600,
+                "spacing": 8
             },
-            "type": "hypertesthoming"
+            "type": "hypertestcircle"
         },
         {
             "wave": {
-                "path": "loop",
-                "starttime": 1810,
-                "endtime": 2400,
-                "spacing": 10
+                "path": "tl-\u003ebl",
+                "starttime": 1340,
+                "endtime": 1600,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tl-\u003ebl",
+                "starttime": 1340,
+                "endtime": 1600,
+                "spacing": 8
             },
             "type": "testhoming"
         },
         {
             "wave": {
-                "path": "loop",
-                "starttime": 1810,
-                "endtime": 2400,
-                "spacing": 10
+                "path": "tr-\u003ebr",
+                "starttime": 1340,
+                "endtime": 1600,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tr-\u003ebr",
+                "starttime": 1340,
+                "endtime": 1600,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tr-\u003ebr",
+                "starttime": 1340,
+                "endtime": 1600,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tr-\u003ebr",
+                "starttime": 1340,
+                "endtime": 1600,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tr-\u003ebr",
+                "starttime": 1340,
+                "endtime": 1600,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tr-\u003ebr",
+                "starttime": 1340,
+                "endtime": 1600,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tr-\u003ebr",
+                "starttime": 1340,
+                "endtime": 1600,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tr-\u003ebr",
+                "starttime": 1340,
+                "endtime": 1600,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tr-\u003ebr",
+                "starttime": 1340,
+                "endtime": 1600,
+                "spacing": 8
+            },
+            "type": "hypertestcircle"
+        },
+        {
+            "wave": {
+                "path": "tr-\u003ebr",
+                "starttime": 1340,
+                "endtime": 1600,
+                "spacing": 8
             },
             "type": "testhoming"
-        },
-        {
-            "wave": {
-                "path": "loop",
-                "starttime": 1810,
-                "endtime": 2400,
-                "spacing": 10
-            },
-            "type": "testhoming"
-        },
-        {
-            "wave": {
-                "path": "loop",
-                "starttime": 1810,
-                "endtime": 2400,
-                "spacing": 10
-            },
-            "type": "testhoming"
-        },
-        {
-            "wave": {
-                "path": "loop",
-                "starttime": 1810,
-                "endtime": 2400,
-                "spacing": 10
-            },
-            "type": "testhoming"
-        },
-        {
-            "wave": {
-                "path": "loop",
-                "starttime": 1810,
-                "endtime": 2400,
-                "spacing": 10
-            },
-            "type": "testhoming"
-        },
-        {
-            "wave": {
-                "path": "loop",
-                "starttime": 1810,
-                "endtime": 2400,
-                "spacing": 10
-            },
-            "type": "testcircle"
-        },
-        {
-            "wave": {
-                "path": "leftbottomup",
-                "starttime": 1950,
-                "endtime": 2400,
-                "spacing": 10
-            },
-            "type": "testhoming"
-        },
-        {
-            "wave": {
-                "path": "leftbottomup",
-                "starttime": 1950,
-                "endtime": 2400,
-                "spacing": 10
-            },
-            "type": "testhomingwall"
-        },
-        {
-            "wave": {
-                "path": "leftbottomup",
-                "starttime": 1950,
-                "endtime": 2400,
-                "spacing": 10
-            },
-            "type": "testhoming"
-        },
-        {
-            "wave": {
-                "path": "leftbottomup",
-                "starttime": 1950,
-                "endtime": 2400,
-                "spacing": 10
-            },
-            "type": "testhoming"
-        },
-        {
-            "wave": {
-                "path": "leftbottomup",
-                "starttime": 1950,
-                "endtime": 2400,
-                "spacing": 10
-            },
-            "type": "testhoming"
-        },
-        {
-            "wave": {
-                "path": "leftbottomup",
-                "starttime": 1950,
-                "endtime": 2400,
-                "spacing": 10
-            },
-            "type": "testhoming"
-        },
-        {
-            "wave": {
-                "path": "leftbottomup",
-                "starttime": 1950,
-                "endtime": 2400,
-                "spacing": 10
-            },
-            "type": "testhoming"
-        },
-        {
-            "wave": {
-                "path": "leftbottomup",
-                "starttime": 1950,
-                "endtime": 2400,
-                "spacing": 10
-            },
-            "type": "testhoming"
-        },
-        {
-            "wave": {
-                "path": "leftbottomup",
-                "starttime": 1950,
-                "endtime": 2400,
-                "spacing": 10
-            },
-            "type": "testhoming"
-        },
-        {
-            "wave": {
-                "path": "leftbottomup",
-                "starttime": 1950,
-                "endtime": 2400,
-                "spacing": 10
-            },
-            "type": "testcircle"
-        },
-        {
-            "wave": {
-                "path": "oof de loop",
-                "starttime": 2210,
-                "endtime": 3000,
-                "spacing": 10
-            },
-            "type": "testhomingwall"
-        },
-        {
-            "wave": {
-                "path": "oof de loop",
-                "starttime": 2210,
-                "endtime": 3000,
-                "spacing": 10
-            },
-            "type": "testhoming"
-        },
-        {
-            "wave": {
-                "path": "oof de loop",
-                "starttime": 2210,
-                "endtime": 3000,
-                "spacing": 10
-            },
-            "type": "testhoming"
-        },
-        {
-            "wave": {
-                "path": "oof de loop",
-                "starttime": 2210,
-                "endtime": 3000,
-                "spacing": 10
-            },
-            "type": "testhoming"
-        },
-        {
-            "wave": {
-                "path": "oof de loop",
-                "starttime": 2210,
-                "endtime": 3000,
-                "spacing": 10
-            },
-            "type": "testhoming"
-        },
-        {
-            "wave": {
-                "path": "oof de loop",
-                "starttime": 2210,
-                "endtime": 3000,
-                "spacing": 10
-            },
-            "type": "testhoming"
-        },
-        {
-            "wave": {
-                "path": "oof de loop",
-                "starttime": 2210,
-                "endtime": 3000,
-                "spacing": 10
-            },
-            "type": "testhoming"
-        },
-        {
-            "wave": {
-                "path": "oof de loop",
-                "starttime": 2210,
-                "endtime": 3000,
-                "spacing": 10
-            },
-            "type": "testhoming"
-        },
-        {
-            "wave": {
-                "path": "oof de loop",
-                "starttime": 2210,
-                "endtime": 3000,
-                "spacing": 10
-            },
-            "type": "testcircle"
         }
     ]
 }

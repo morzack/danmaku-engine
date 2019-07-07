@@ -1,11 +1,16 @@
 // level configuration
+// audio configuration
+soundfile: "l0bgm"
+
 // DEFAULTS
 types: {
     wall: {
         homing: "testhomingwall"
+        thicc: "testhomingthiccwall"
     }
     circle: {
         default: "testcircle"
+        hyper: "hypertestcircle"
     }
     line: {
         default: "testhoming"
@@ -13,68 +18,59 @@ types: {
     }
 }
 paths: {
-    u: "topu"
-    tsu: "toptsu"
-    l: "L"
-    j: "J"
-    loop: "loop"
-    blup: "leftbottomup"
-    oofloop: "oof de loop" // what even
+    a: "tl->tr"
+    b: "tr->tl"
+    c: "tl->bl"
+    d: "tr->br"
 }
 waves: {
     a: {
-        starttime: 100
+        starttime: 140
         endtime: 800
-        path: paths.u
-        spacing: 30
+        path: paths.a
+        spacing: 21
     }
     b: {
-        starttime: 220
+        starttime: 300
         endtime: 800
-        path: paths.tsu
-        spacing: 30
+        path: paths.b
+        spacing: 21
     }
     c: {
-        starttime: 800
-        endtime: 1600
-        path: paths.l
-        spacing: 20
+        starttime: 658
+        endtime: 1200
+        path: paths.c
+        spacing: 8
     }
     d: {
-        starttime: 900
-        endtime: 1600
-        path: paths.j
-        spacing: 20
+        starttime: 658
+        endtime: 1200
+        path: paths.d
+        spacing: 8
     }
     e: {
-        starttime: 1400
-        endtime: 2000
-        path: paths.j
-        spacing: 40
+        starttime: 830
+        endtime: 1600
+        path: paths.a
+        spacing: 21
     }
     f: {
-        starttime: 1400
-        endtime: 2000
-        path: paths.l
-        spacing: 40
+        starttime: 995
+        endtime: 1600
+        path: paths.b
+        spacing: 21
     }
     g: {
-        starttime: 1810
-        endtime: 2400
-        path: paths.loop
-        spacing: 10
+        starttime: 1340
+        endtime: 1600
+        path: paths.c
+        spacing: 8
     }
     h: {
-        starttime: 1950
-        endtime: 2400
-        path: paths.blup
-        spacing: 10
-    }
-    i: {
-        starttime: 2210
-        endtime: 3000
-        path: paths.oofloop
-        spacing: 10
+        starttime: 1340
+        endtime: 1600
+        path: paths.d
+        spacing: 8
     }
 }
 
@@ -85,187 +81,207 @@ enemies: [
         type: types.wall.homing
     },
     {
-        wave: waves.a,
+        wave: waves.a
         type: types.circle.default
     },
     {
-        wave: waves.a,
+        wave: waves.a
         type: types.line.default
+    },
+    {
+        wave: waves.b
+        type: types.wall.homing
+    },
+    {
+        wave: waves.b
+        type: types.circle.default
     },
     {
         wave: waves.b
         type: types.line.default
     },
     {
-        wave: waves.b,
-        type: types.circle.default
-    },
-    {
-        wave: waves.b,
-        type: types.wall.homing
-    },
-    {
-        wave: waves.b,
-        type: types.circle.default
-    },
-    {
-        wave: waves.b,
-        type: types.line.default
-    },
-    {
-        wave: waves.c,
-        type: types.line.default
-    },
-    {
-        wave: waves.c,
-        type: types.wall.homing
+        wave: waves.c
+        type: types.circle.hyper
     },
     {
         wave: waves.c
-        type: types.wall.homing
+        type: types.circle.hyper
     },
     {
         wave: waves.c
-        type: types.circle.default
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.c
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.c
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.c
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.c
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.c
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.c
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.c
+        type: types.line.default
+    },
+    {
+        wave: waves.d
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.d
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.d
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.d
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.d
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.d
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.d
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.d
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.d
+        type: types.circle.hyper
     },
     {
         wave: waves.d
         type: types.line.default
     },
     {
-        wave: waves.d
+        wave: waves.e
         type: types.wall.homing
     },
     {
-        wave: waves.d
-        type: types.wall.homing
-    },
-    {
-        wave: waves.d
+        wave: waves.e
         type: types.circle.default
     },
     {
         wave: waves.e
-        type: types.line.hyper
-    },
-    {
-        wave: waves.e
-        type: types.circle.default
+        type: types.line.default
     },
     {
         wave: waves.f
-        type: types.line.hyper
+        type: types.wall.homing
     },
     {
         wave: waves.f
         type: types.circle.default
     },
     {
-        wave: waves.g
-        type: types.line.hyper
-    },
-    {
-        wave: waves.g
+        wave: waves.f
         type: types.line.default
     },
     {
         wave: waves.g
-        type: types.line.default
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.g
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.g
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.g
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.g
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.g
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.g
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.g
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.g
+        type: types.circle.hyper
     },
     {
         wave: waves.g
         type: types.line.default
     },
     {
-        wave: waves.g
-        type: types.line.default
+        wave: waves.h
+        type: types.circle.hyper
     },
     {
-        wave: waves.g
-        type: types.line.default
+        wave: waves.h
+        type: types.circle.hyper
     },
     {
-        wave: waves.g
-        type: types.line.default
+        wave: waves.h
+        type: types.circle.hyper
     },
     {
-        wave: waves.g
-        type: types.circle.default
+        wave: waves.h
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.h
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.h
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.h
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.h
+        type: types.circle.hyper
+    },
+    {
+        wave: waves.h
+        type: types.circle.hyper
     },
     {
         wave: waves.h
         type: types.line.default
-    },
-    {
-        wave: waves.h
-        type: types.wall.homing
-    },
-    {
-        wave: waves.h
-        type: types.line.default
-    },
-    {
-        wave: waves.h
-        type: types.line.default
-    },
-    {
-        wave: waves.h
-        type: types.line.default
-    },
-    {
-        wave: waves.h
-        type: types.line.default
-    },
-    {
-        wave: waves.h
-        type: types.line.default
-    },
-    {
-        wave: waves.h
-        type: types.line.default
-    },
-    {
-        wave: waves.h
-        type: types.line.default
-    },
-    {
-        wave: waves.h
-        type: types.circle.default
-    },
-    {
-        wave: waves.i
-        type: types.wall.homing
-    },
-    {
-        wave: waves.i
-        type: types.line.default
-    },
-    {
-        wave: waves.i
-        type: types.line.default
-    },
-    {
-        wave: waves.i
-        type: types.line.default
-    },
-    {
-        wave: waves.i
-        type: types.line.default
-    },
-    {
-        wave: waves.i
-        type: types.line.default
-    },
-    {
-        wave: waves.i
-        type: types.line.default
-    },
-    {
-        wave: waves.i
-        type: types.line.default
-    },
-    {
-        wave: waves.i
-        type: types.circle.default
     }
 ]

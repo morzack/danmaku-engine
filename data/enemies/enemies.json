@@ -44,6 +44,11 @@
             "shootrate": 50,
             "shootingpattern": "wall",
             "bullets": 2
+        },
+        "thiccwall": {
+            "shootrate": 70,
+            "shootingpattern": "wall",
+            "bullets": 5
         }
     },
     "images": {
@@ -87,6 +92,21 @@
             "image": "b1",
             "health": 15
         },
+        "hypertestcircle": {
+            "size": {
+                "width": 40,
+                "height": 40,
+                "hitbox": 20
+            },
+            "shotpattern": {
+                "shootrate": 40,
+                "shootingpattern": "circle",
+                "bullets": 7
+            },
+            "bullettype": "hypernondirectional",
+            "image": "b1",
+            "health": 8
+        },
         "testhoming": {
             "size": {
                 "width": 40,
@@ -116,6 +136,21 @@
             "bullettype": "basicnondirectional",
             "image": "g2",
             "health": 15
+        },
+        "testhomingthiccwall": {
+            "size": {
+                "width": 40,
+                "height": 40,
+                "hitbox": 20
+            },
+            "shotpattern": {
+                "shootrate": 70,
+                "shootingpattern": "wall",
+                "bullets": 5
+            },
+            "bullettype": "hyperhoming",
+            "image": "b1",
+            "health": 8
         }
     }
 }

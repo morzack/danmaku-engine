@@ -1,7 +1,7 @@
 {
     "width": 50,
     "height": 50,
-    "hitbox": 10,
+    "hitbox": 7,
     "speed": 4,
     "slowedmodifier": 0.5,
     "shootrate": 3,

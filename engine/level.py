@@ -45,6 +45,9 @@ class Level(State):
             self.enemies.append(Enemy(str(i), wave_counter, self.cached_level_data))
             wave_counter += 1
 
+        pygame.mixer.music.load(f"data/audio/{enemy_level_data['soundfile']}.mp3")
+        pygame.mixer.music.play()
+
     def process_event(self, event : pygame.event.EventType):
         """
         process an event as needed. tl;dr keypresses and stuff

@@ -20,9 +20,15 @@
             "image_location": "redcircle",
             "locking": false
         },
+        "hypernondirectional": {
+            "speed": 3,
+            "radius": 10,
+            "image_location": "redcircle",
+            "locking": false
+        },
         "hyperhoming": {
-            "speed": 4,
-            "radius": 5,
+            "speed": 3,
+            "radius": 7,
             "image_location": "greenblob",
             "locking": true
         },
